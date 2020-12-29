@@ -18,3 +18,5 @@ C:\Users\johannes\Documents\Visual Studio 2019\projects\Ny mapp\grupp19_lab2\obj
 C:\Users\johannes\Documents\Visual Studio 2019\projects\Ny mapp\grupp19_lab2\obj\Debug\grupp19_lab2.csproj.CoreCompileInputs.cache
 C:\Users\johannes\Documents\Visual Studio 2019\projects\Ny mapp\grupp19_lab2\obj\Debug\grupp19_lab2.exe
 C:\Users\johannes\Documents\Visual Studio 2019\projects\Ny mapp\grupp19_lab2\obj\Debug\grupp19_lab2.pdb
+C:\Users\norep\source\repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.Studenter.resources
+C:\Users\norep\source\repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.Lärare.resources
