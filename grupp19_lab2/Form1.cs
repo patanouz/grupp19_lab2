@@ -58,13 +58,10 @@ namespace grupp19_lab2
             betyg.BackColor = Color.Chocolate;
             hjälp.BackColor = Color.Coral;
             */
-
+            
 
         }
 
-        
-
-       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -87,20 +84,18 @@ namespace grupp19_lab2
             mdiclient.ResumeLayout(true);
             this.ResumeLayout(true);
             base.OnLoad(e);
+
         }
 
         
-
-
         private void resetVisiblity()
         {
              foreach(Form f in allaSidor)
             {
                 f.Hide();
                 f.Location = startPoint;
-            }
 
-            
+            }
         }
 
         private void studenterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +111,7 @@ namespace grupp19_lab2
             resetVisiblity();
             kurser.Show();
             kurser.Location = startPoint;
+
         }
 
         private void lärareToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,6 +119,7 @@ namespace grupp19_lab2
             resetVisiblity();
             lärare.Show();
             lärare.Location = startPoint;
+
         }
 
         private void betygToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +127,7 @@ namespace grupp19_lab2
             resetVisiblity();
             betyg.Show();
             betyg.Location = startPoint;
+
         }
 
         private void hjälpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +135,9 @@ namespace grupp19_lab2
             resetVisiblity();
             hjälp.Show();
             hjälp.Location = startPoint;
+
         }
+
+       
     }
 }
