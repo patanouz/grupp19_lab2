@@ -52,14 +52,14 @@ namespace grupp19_lab2
             resetVisiblity();
             studenter.Show();
 
-            
+            /*
             studenter.BackColor = Color.Maroon;
             kurser.BackColor = Color.Aqua;
             lärare.BackColor = Color.Beige;
             betyg.BackColor = Color.Chocolate;
             hjälp.BackColor = Color.Coral;
             
-            
+            */
 
         }
 
