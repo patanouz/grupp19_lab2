@@ -19,7 +19,7 @@ namespace grupp19_lab2
         Betyg betyg;
         Hjälp hjälp;
         
-        //TODO: Ta bort den här kommentaren
+
 
         Form[] allaSidor;
 
