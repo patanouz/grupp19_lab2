@@ -13,8 +13,10 @@ namespace grupp19_lab2
     public partial class Betyg : Form
     {
         Form1 form1;
-        public Betyg(Form1 form1)
+        public Betyg(Form1 form1) // Hej Anton // Ät gröt
         {
+        
+        
             this.form1 = form1;
             InitializeComponent();
         }
