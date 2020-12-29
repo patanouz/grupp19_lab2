@@ -19,13 +19,10 @@ namespace grupp19_lab2
         Betyg betyg;
         Hjälp hjälp;
         
-
-
         Form[] allaSidor;
 
         Point startPoint = new Point(0, 0);
 
-        
         
 
         public Form1()
@@ -45,6 +42,8 @@ namespace grupp19_lab2
             allaSidor[4] = hjälp;
 
 
+
+
             foreach(Form f in allaSidor)
             {
                 f.MdiParent = this;
@@ -53,13 +52,13 @@ namespace grupp19_lab2
             resetVisiblity();
             studenter.Show();
 
-            /*
+            
             studenter.BackColor = Color.Maroon;
             kurser.BackColor = Color.Aqua;
             lärare.BackColor = Color.Beige;
             betyg.BackColor = Color.Chocolate;
             hjälp.BackColor = Color.Coral;
-            */
+            
             
 
         }

@@ -14,7 +14,9 @@ namespace grupp19_lab2
     {
 
         Form1 form1;
+        //Testkommentar
 
+        //Testkommentar 2
 
         public Studenter(Form1 form1)
         {
@@ -29,12 +31,6 @@ namespace grupp19_lab2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
-//width 784
-//width 537
