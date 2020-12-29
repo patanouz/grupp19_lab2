@@ -15,10 +15,12 @@ namespace grupp19_lab2
 
         Form1 form1;
 
+
         public Studenter(Form1 form1)
         {
             this.form1 = form1;
             InitializeComponent();
+            
             
         }
 
