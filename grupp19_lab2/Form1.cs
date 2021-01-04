@@ -23,10 +23,15 @@ namespace grupp19_lab2
 
         Point startPoint = new Point(0, 0);
 
+
+        private CrappyFilebasedDatabase database;
         
 
         public Form1()
         {
+
+            database = new CrappyFilebasedDatabase();
+
             InitializeComponent();
             studenter = new Studenter(this);
             kurser = new Kurser(this);
@@ -41,10 +46,12 @@ namespace grupp19_lab2
             allaSidor[3] = betyg;
             allaSidor[4] = hjälp;
 
+            //Byt ut den mot riktig databas sen
+            
+            
 
 
-
-            foreach(Form f in allaSidor)
+            foreach (Form f in allaSidor)
             {
                 f.MdiParent = this;
             }
@@ -63,10 +70,9 @@ namespace grupp19_lab2
 
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected override void OnLoad(EventArgs e)
@@ -137,6 +143,15 @@ namespace grupp19_lab2
             hjälp.Show();
             hjälp.Location = startPoint;
 
+        }
+
+       public CrappyFilebasedDatabase Test()
+        {
+             if(database == null)
+            {
+                MessageBox.Show("WTF??");
+            }
+            return database;
         }
 
        

@@ -15,10 +15,18 @@ namespace grupp19_lab2
 
         Form1 form1;
 
+
         public Kurser(Form1 form1)
         {
             this.form1 = form1;
             InitializeComponent();
+
+
+        }
+
+        private void Kurser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

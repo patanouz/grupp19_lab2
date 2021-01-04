@@ -1,0 +1,7 @@
+﻿Studenter
+Adam:Andersson:123:1
+Bertil:Karlsson:456:2
+Kurser
+Kursmoment
+Lärare
+Lärarlag

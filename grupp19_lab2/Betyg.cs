@@ -20,5 +20,10 @@ namespace grupp19_lab2
             this.form1 = form1;
             InitializeComponent();
         }
+
+        private void Betyg_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

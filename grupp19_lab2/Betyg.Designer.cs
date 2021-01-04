@@ -29,11 +29,19 @@ namespace grupp19_lab2
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Betyg
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 537);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Betyg";
             this.Text = "Betyg";
+            this.Load += new System.EventHandler(this.Betyg_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

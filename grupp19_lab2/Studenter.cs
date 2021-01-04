@@ -28,7 +28,7 @@ namespace grupp19_lab2
 
         private void Studenter_Load(object sender, EventArgs e)
         {
-
+            
         }
 
     }
