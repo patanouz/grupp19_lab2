@@ -47,9 +47,9 @@ namespace grupp19_lab2
             allaSidor[4] = hjälp;
 
             //Byt ut den mot riktig databas sen
-            
-            
 
+
+            MessageBox.Show("");
 
             foreach (Form f in allaSidor)
             {

@@ -11,7 +11,11 @@ namespace grupp19_lab2
     public class CrappyFilebasedDatabase
     {
 
-        string[] arr = File.ReadAllLines("C:\\Users\\norep\\source\\repos\\grupp19_lab2\\grupp19_lab2\\data.txt");
+        static string path = Directory.GetCurrentDirectory();
+
+        string[] arr = File.ReadAllLines(path + "/data.txt");
+
+        
 
         public CrappyFilebasedDatabase()
         {
@@ -42,40 +46,42 @@ namespace grupp19_lab2
         {
             
 
-            List<String> arr2 = new List<String>();
-            bool found = false;
-            foreach(string s in arr)
-            {
 
-                if (s.Contains("Kurser"))
-                {
-                    break;
-                }
+             List<String> arr2 = new List<String>();
+             bool found = false;
+             foreach(string s in arr)
+             {
 
-                if (found)
-                {
-                    arr2.Add(s);
-                }
+                 if (s.Contains("Kurser"))
+                 {
+                     break;
+                 }
 
-                if(s.Contains("Studenter"))
-                {
-                    found = true;
-                }
+                 if (found)
+                 {
+                     arr2.Add(s);
+                 }
 
-                
-            }
+                 if(s.Contains("Studenter"))
+                 {
+                     found = true;
+                 }
 
-            Student[] studentlista = new Student[arr2.Count];
 
-            for (int i = 0; i < arr2.Count; i++)
-            {
-                
-                string[] temp = arr2[i].Split(':');
-                studentlista[i] = new Student(temp[0], temp[1], temp[2], int.Parse(temp[3]));
+             }
 
-            }
+             Student[] studentlista = new Student[arr2.Count];
 
-            return studentlista;
+             for (int i = 0; i < arr2.Count; i++)
+             {
+
+                 string[] temp = arr2[i].Split(':');
+                 studentlista[i] = new Student(temp[0], temp[1], temp[2], int.Parse(temp[3]));
+
+             }
+
+             return studentlista;
+            
         }
 
         public void RedigeraKurs(Kurs kurs)
