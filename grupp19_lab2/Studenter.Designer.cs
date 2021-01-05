@@ -29,15 +29,27 @@ namespace grupp19_lab2
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(410, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 130);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Studenter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(784, 537);
+            this.ClientSize = new System.Drawing.Size(1437, 991);
+            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Studenter";
             this.Text = "Studenter";
             this.Load += new System.EventHandler(this.Studenter_Load);
@@ -46,5 +58,7 @@ namespace grupp19_lab2
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
