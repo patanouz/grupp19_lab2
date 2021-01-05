@@ -39,3 +39,19 @@ C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.csproj
 C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.exe
 C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.pdb
 C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\data.txt
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\bin\Debug\data.txt
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\bin\Debug\grupp19_lab2.exe.config
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\bin\Debug\grupp19_lab2.exe
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\bin\Debug\grupp19_lab2.pdb
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.csprojAssemblyReference.cache
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Betyg.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Form1.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Hjälp.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Kurser.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Lärare.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Properties.Resources.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.Studenter.resources
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.csproj.GenerateResource.cache
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.csproj.CoreCompileInputs.cache
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.exe
+C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.pdb
