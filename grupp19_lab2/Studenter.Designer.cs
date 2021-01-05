@@ -56,12 +56,11 @@ namespace grupp19_lab2
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1120, 840);
+            this.ClientSize = new System.Drawing.Size(1568, 1176);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Studenter";
             this.Text = "Studenter";
             this.Load += new System.EventHandler(this.Studenter_Load);
