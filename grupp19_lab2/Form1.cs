@@ -49,7 +49,7 @@ namespace grupp19_lab2
             //Byt ut den mot riktig databas sen
 
 
-            
+            MessageBox.Show("Test till johannes");
 
             foreach (Form f in allaSidor)
             {
