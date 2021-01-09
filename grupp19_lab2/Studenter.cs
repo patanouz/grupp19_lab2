@@ -12,15 +12,9 @@ namespace grupp19_lab2
 {
     public partial class Studenter : Form
     {
-        
-
         Form1 form1;
         List<Student> studentLista = new List<Student>();
         bool HållerPåAttSkapaNyStudent;
-
-        //Testkommentar
-
-        //Testkommentar 2
 
         public Studenter(Form1 form1)
         {
@@ -76,8 +70,6 @@ namespace grupp19_lab2
 
         private void studentListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-           
             if (studentListBox.SelectedIndex == -1) return;
             PersonnummerTextBox.Text = studentLista[studentListBox.SelectedIndex].personnummer;
             FörnamnTextBox.Text = studentLista[studentListBox.SelectedIndex].Förnamn;
@@ -89,20 +81,18 @@ namespace grupp19_lab2
 
         private void SkapaNyStundentButton_Click(object sender, EventArgs e)
         {
-            HållerPåAttSkapaNyStudent = true;
-            
-            if (HållerPåAttSkapaNyStudent)
+            //HållerPåAttSkapaNyStudent = true;
+            /*if (HållerPåAttSkapaNyStudent)
             {
                 // Student nyStudent = new Student("","","",int.Parse(PersonnummerTextBox.Text));
-                Student nyStudent = new Student("", "", "", 2);
+                
             }
-           
-            PersonnummerTextBox.Focus();
+            */
             // studentLista.Add(nyStudent);
             // UppdateraStudentListBox();
             studentListBox.Items.Add("");
-            studentListBox.SelectedIndex = studentListBox.Items.Count-1;
-
+            //studentListBox.SelectedIndex = studentListBox.Items.Count - 1;
+            PersonnummerTextBox.Focus();
         }
 
         private void FörnamnTextBox_TextChanged(object sender, EventArgs e)
@@ -112,20 +102,19 @@ namespace grupp19_lab2
 
         private void SparaButton_Click(object sender, EventArgs e)
         {
-           
-
+            Student nyStudent = new Student("", "", "", 0);
             //studentLista[studentListBox.SelectedIndex].personnummer = PersonnummerTextBox.Text;
             studentLista[studentListBox.SelectedIndex].Förnamn = FörnamnTextBox.Text;
             studentLista[studentListBox.SelectedIndex].efternamn = EfternamnTextBox.Text;
-            
+            studentLista.Add(nyStudent);
             UppdateraStudentListBox(); // Metod som rensar listan och sedan printar alla nya ändringar som sker.
-
         }
 
         private void TaBortStudentButton_Click(object sender, EventArgs e)
         {
             if (studentLista.Count <= 0) { return; }
             studentLista.RemoveAt(studentListBox.SelectedIndex);
+            // Ska läggas till en messagebox som frågar om man verkligen vill...
             UppdateraStudentListBox();
         }
     }
