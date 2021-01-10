@@ -31,6 +31,11 @@ namespace grupp19_lab2
             kursLista.AddRange(kurser);
         }
 
+        public string HämtaNamn()
+        {
+            return lagNamn;
+        }
+
         public void TaBortLärare(params Teacher[] teacher)
         {
             foreach(Teacher t in teacher)
