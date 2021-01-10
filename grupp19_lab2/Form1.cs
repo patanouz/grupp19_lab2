@@ -18,6 +18,7 @@ namespace grupp19_lab2
         Lärare lärare;
         Betyg betyg;
         Hjälp hjälp;
+        HanteraKurser hanteraKurser;
         
         Form[] allaSidor;
 
@@ -38,13 +39,16 @@ namespace grupp19_lab2
             lärare = new Lärare(this);
             betyg = new Betyg(this);
             hjälp = new Hjälp(this);
+            hanteraKurser = new HanteraKurser(this);
+            
 
-            allaSidor = new Form[5];
+            allaSidor = new Form[6];
             allaSidor[0] = studenter;
             allaSidor[1] = kurser;
             allaSidor[2] = lärare;
             allaSidor[3] = betyg;
             allaSidor[4] = hjälp;
+            allaSidor[5] = hanteraKurser;
 
             //Byt ut den mot riktig databas sen
 
@@ -115,9 +119,7 @@ namespace grupp19_lab2
 
         private void kurserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            resetVisiblity();
-            kurser.Show();
-            kurser.Location = startPoint;
+            
 
         }
 
@@ -154,6 +156,30 @@ namespace grupp19_lab2
             return database;
         }
 
-       
+        private void nyKursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetVisiblity();
+            kurser.Show();
+            kurser.Location = startPoint;
+        }
+
+        private void hanteraKurserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetVisiblity();
+            hanteraKurser.Show();
+            hanteraKurser.Location = startPoint;
+        }
+
+        private void kurserToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is ToolStripDropDownItem)
+            {
+                ToolStripDropDownItem item = sender as ToolStripDropDownItem;
+                if (item.HasDropDownItems && !item.DropDown.Visible)
+                {
+                    item.ShowDropDown();
+                }
+            }
+        }
     }
 }
