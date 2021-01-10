@@ -24,6 +24,9 @@ namespace grupp19_lab2
             arr = new List<Student>();
             arr.AddRange(form1.Test().HämtaStudenter());
 
+            arr.Add(new Student("Testare", "Testersson", "789", 8));
+
+            comboBox1.SelectedIndex = 0;
             
 
             Test = arr[0].läsbarKurslista;
@@ -33,12 +36,13 @@ namespace grupp19_lab2
             
             arr[0].LäggTillBetysunderlag(TestKurs, "VG");
             arr[0].LäggTillBetysunderlag(OOSU);
+            arr[1].LäggTillBetysunderlag(TestKurs, "MVG");
 
 
 
-            listBox1.Items.Add(arr[0].HämtaNamn());
+            listBox1.Items.AddRange(arr.ToArray());
             
-            listBox1.SelectedIndex = 0; //Den här kan behövas, har ni inte med den så kommer programmet att krasha om du trycker i rutan utanför någon student
+            //listBox1.SelectedIndex = 0; //Den här kan behövas, har ni inte med den så kommer programmet att krasha om du trycker i rutan utanför någon student
 
         }
 
@@ -53,9 +57,17 @@ namespace grupp19_lab2
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            foreach (var item in Test.Keys)
+            if (listBox1.SelectedIndex < 0)
             {
-                listBox2.Items.Add(item.HämtaNamn());
+                return;
+            }
+            listBox2.Items.Clear();
+
+            Test = arr[listBox1.SelectedIndex].läsbarKurslista;
+
+            foreach(var item in Test)
+            {
+                listBox2.Items.Add(item.Key.HämtaNamn());   
             }
 
             /*
@@ -76,6 +88,8 @@ namespace grupp19_lab2
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             string test = listBox2.Items[listBox2.SelectedIndex].ToString();
+
+            
 
             foreach (var item in Test)
             {
@@ -101,6 +115,11 @@ namespace grupp19_lab2
                     arr[listBox1.SelectedIndex].UppdateraBetyg(item.Key, "MVG");
                 
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

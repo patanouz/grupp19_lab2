@@ -60,9 +60,12 @@ namespace grupp19_lab2
             kurslista[underlag] = nyttBetyg; 
         }
 
-        
-        
-      
+
+        public override string ToString()
+        {
+            return Förnamn + " " + efternamn;
+        }
+
 
     }
 }
