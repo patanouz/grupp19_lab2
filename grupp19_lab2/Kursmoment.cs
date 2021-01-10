@@ -9,24 +9,31 @@ namespace grupp19_lab2
     public class Kursmoment : IBetygsunderlag
     {
         private string momentNamn;
-        private int kurskod;
         private Kurs kurs;
 
-        public Kursmoment(string momentNamn, int kurskod, Kurs kurs)
+        public Kursmoment(string momentNamn)
         {
             this.momentNamn = momentNamn;
-            this.kurskod = kurskod;
-            this.kurs = kurs;
         }
 
         public int HämtaKurskod()
         {
-            return kurskod;
+            if(kurs == null)
+            {
+                return -1;
+            }
+
+            return kurs.HämtaKurskod();
         }
 
         public string HämtaNamn()
         {
             return momentNamn;
+        }
+
+        public void LäggTillKurs(Kurs kurs)
+        {
+            this.kurs = kurs;
         }
     }
 }
