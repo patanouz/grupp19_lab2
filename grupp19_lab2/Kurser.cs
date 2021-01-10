@@ -40,7 +40,7 @@ namespace grupp19_lab2
             lärarlagComboBox.Items.Clear();
             foreach (LärarLag ll in lararlagLista)
             {
-                lärarlagComboBox.Items.Add(ll.Hämtanamn());
+                //lärarlagComboBox.Items.Add(ll.Hämtanamn());
             }
         }
 
@@ -84,7 +84,7 @@ namespace grupp19_lab2
         private void addKursButton_Click(object sender, EventArgs e)
         {
             Kurs k = new Kurs(kursNamnTextBox.Text, 1);
-            k.LäggTillStudent(addedStudents);
+            //k.LäggTillStudent(addedStudents);
 
         }
     }

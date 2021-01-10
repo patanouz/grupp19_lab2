@@ -26,7 +26,7 @@ namespace grupp19_lab2
 
             arr.Add(new Student("Testare", "Testersson", "789", 8));
 
-            comboBox1.SelectedIndex = 0;
+            
             
 
             Test = arr[0].läsbarKurslista;

@@ -53,6 +53,12 @@
       <DependentUpon>Betyg.cs</DependentUpon>
     </Compile>
     <Compile Include="CrappyFilebasedDatabase.cs" />
+    <Compile Include="HanteraKurser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HanteraKurser.Designer.cs">
+      <DependentUpon>HanteraKurser.cs</DependentUpon>
+    </Compile>
     <Compile Include="IBetygsunderlag.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -100,6 +106,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HanteraKurser.resx">
+      <DependentUpon>HanteraKurser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hjälp.resx">
       <DependentUpon>Hjälp.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +130,9 @@
     <EmbeddedResource Include="Studenter.resx">
       <DependentUpon>Studenter.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="databas.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
