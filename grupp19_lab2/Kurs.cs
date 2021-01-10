@@ -23,8 +23,6 @@ namespace grupp19_lab2
             this.kurskod = kurskod;
         }
 
-
-
         public void LäggTillStudent(params Student[] studenter)
         {
             studentLista.AddRange(studenter);
@@ -60,6 +58,12 @@ namespace grupp19_lab2
         {
             this.kursmoment.AddRange(kursmoment);
         }
+
+        public void BytNamnPåKurs(string kursNamn)
+        {
+            this.kursNamn = kursNamn;
+        }
+
 
 
     }

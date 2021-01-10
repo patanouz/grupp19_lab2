@@ -11,24 +11,22 @@ namespace grupp19_lab2
         private string momentNamn;
         private Kurs kurs;
 
-        public Kursmoment(string momentNamn)
+        public Kursmoment(string momentNamn, Kurs kurs)
         {
             this.momentNamn = momentNamn;
+            this.kurs = kurs;
         }
 
         public int HämtaKurskod()
         {
-            if(kurs == null)
-            {
-                return -1;
-            }
-
             return kurs.HämtaKurskod();
+
         }
 
         public string HämtaNamn()
         {
             return momentNamn;
+
         }
 
         public void LäggTillKurs(Kurs kurs)
