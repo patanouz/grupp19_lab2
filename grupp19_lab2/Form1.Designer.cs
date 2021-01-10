@@ -35,6 +35,8 @@ namespace grupp19_lab2
             this.lärareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,9 @@ namespace grupp19_lab2
             // 
             // kurserToolStripMenuItem
             // 
+            this.kurserToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test1ToolStripMenuItem,
+            this.test2ToolStripMenuItem});
             this.kurserToolStripMenuItem.Name = "kurserToolStripMenuItem";
             this.kurserToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.kurserToolStripMenuItem.Text = "Kurser";
@@ -86,6 +91,18 @@ namespace grupp19_lab2
             this.hjälpToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.hjälpToolStripMenuItem.Text = "Hjälp";
             this.hjälpToolStripMenuItem.Click += new System.EventHandler(this.hjälpToolStripMenuItem_Click);
+            // 
+            // test1ToolStripMenuItem
+            // 
+            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.test1ToolStripMenuItem.Text = "Test1";
+            // 
+            // test2ToolStripMenuItem
+            // 
+            this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
+            this.test2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.test2ToolStripMenuItem.Text = "Test2";
             // 
             // Form1
             // 
@@ -113,6 +130,8 @@ namespace grupp19_lab2
         private System.Windows.Forms.ToolStripMenuItem lärareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem betygToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hjälpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
     }
 }
 
