@@ -41,6 +41,8 @@ namespace grupp19_lab2
             this.addKursButton = new System.Windows.Forms.Button();
             this.availableStudentsListBox = new System.Windows.Forms.ListBox();
             this.addedStudentsListBox = new System.Windows.Forms.ListBox();
+            this.addStudentbutton = new System.Windows.Forms.Button();
+            this.removeStudentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lärarlagComboBox
@@ -122,11 +124,11 @@ namespace grupp19_lab2
             // 
             // addKursButton
             // 
-            this.addKursButton.Location = new System.Drawing.Point(736, 675);
+            this.addKursButton.Location = new System.Drawing.Point(807, 600);
             this.addKursButton.Name = "addKursButton";
             this.addKursButton.Size = new System.Drawing.Size(120, 53);
             this.addKursButton.TabIndex = 10;
-            this.addKursButton.Text = "Lägg till";
+            this.addKursButton.Text = "Lägg till kurs";
             this.addKursButton.UseVisualStyleBackColor = true;
             this.addKursButton.Click += new System.EventHandler(this.addKursButton_Click);
             // 
@@ -138,6 +140,7 @@ namespace grupp19_lab2
             this.availableStudentsListBox.Name = "availableStudentsListBox";
             this.availableStudentsListBox.Size = new System.Drawing.Size(223, 424);
             this.availableStudentsListBox.TabIndex = 11;
+            this.availableStudentsListBox.SelectedIndexChanged += new System.EventHandler(this.availableStudentsListBox_SelectedIndexChanged);
             // 
             // addedStudentsListBox
             // 
@@ -147,12 +150,35 @@ namespace grupp19_lab2
             this.addedStudentsListBox.Name = "addedStudentsListBox";
             this.addedStudentsListBox.Size = new System.Drawing.Size(223, 424);
             this.addedStudentsListBox.TabIndex = 12;
+            this.addedStudentsListBox.SelectedIndexChanged += new System.EventHandler(this.addedStudentsListBox_SelectedIndexChanged);
+            // 
+            // addStudentbutton
+            // 
+            this.addStudentbutton.Location = new System.Drawing.Point(827, 175);
+            this.addStudentbutton.Name = "addStudentbutton";
+            this.addStudentbutton.Size = new System.Drawing.Size(75, 45);
+            this.addStudentbutton.TabIndex = 13;
+            this.addStudentbutton.Text = ">";
+            this.addStudentbutton.UseVisualStyleBackColor = true;
+            this.addStudentbutton.Click += new System.EventHandler(this.addStudentbutton_Click);
+            // 
+            // removeStudentButton
+            // 
+            this.removeStudentButton.Location = new System.Drawing.Point(827, 258);
+            this.removeStudentButton.Name = "removeStudentButton";
+            this.removeStudentButton.Size = new System.Drawing.Size(75, 45);
+            this.removeStudentButton.TabIndex = 14;
+            this.removeStudentButton.Text = "<";
+            this.removeStudentButton.UseVisualStyleBackColor = true;
+            this.removeStudentButton.Click += new System.EventHandler(this.removeStudentButton_Click);
             // 
             // Kurser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 826);
+            this.Controls.Add(this.removeStudentButton);
+            this.Controls.Add(this.addStudentbutton);
             this.Controls.Add(this.addedStudentsListBox);
             this.Controls.Add(this.availableStudentsListBox);
             this.Controls.Add(this.addKursButton);
@@ -188,5 +214,7 @@ namespace grupp19_lab2
         private System.Windows.Forms.Button addKursButton;
         private System.Windows.Forms.ListBox availableStudentsListBox;
         private System.Windows.Forms.ListBox addedStudentsListBox;
+        private System.Windows.Forms.Button addStudentbutton;
+        private System.Windows.Forms.Button removeStudentButton;
     }
 }
