@@ -41,16 +41,14 @@ namespace grupp19_lab2
 
         private void Elev_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqliteDatabaseConnection com = new SqliteDatabaseConnection();
-            ListBox1.DataSource = com.HämtaStudenter();
+        
 
 
         }
 
         private void ListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqliteDatabaseConnection com = new SqliteDatabaseConnection();
-            ListBox2.DataSource = com.HämtaKurser();
+            
 
 
         }
