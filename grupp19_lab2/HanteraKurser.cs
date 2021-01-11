@@ -20,6 +20,7 @@ namespace grupp19_lab2
         public HanteraKurser(Form1 form1)
         {
             this.form1 = form1;
+            kursLista.AddRange(form1.Databasanslutning().HämtaKurser());
             InitializeComponent();
             UppdateraKurserListBox();
             KollaVald();
@@ -104,7 +105,7 @@ namespace grupp19_lab2
 
         private void addKursButton_Click(object sender, EventArgs e)
         {
-
+            UppdateraKurserListBox();
         }
 
         private void removeKursButton_Click(object sender, EventArgs e)
