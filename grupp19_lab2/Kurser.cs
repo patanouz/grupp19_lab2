@@ -57,7 +57,7 @@ namespace grupp19_lab2
             }
         }
 
-        private void UppdateraAddedStudentsListBox()
+        private void UppdateraAddedStudentsListBox() // Används denna?
         {
             addedStudentsListBox.Items.Clear();
             foreach (Student s in addedStudents)
@@ -160,22 +160,33 @@ namespace grupp19_lab2
             KollaVald();
         }
 
-        private bool ValidateForm()
+        private bool ValidateForm() // Skriv klart!
         {
-            bool Validated = false;
+            bool validated = false;
 
             if (kursNamnTextBox.Text == "")
             {
                 MessageBox.Show("Kursen saknar namn.");
-                return Validated;
+                return validated;
             }
             if (lärarlagComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Kursen saknar lärarlag.");
+                return validated;
+            }
+            if (kursmomentListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Kursen saknar kursmoment.");
+                return validated;
+            }
+            if (addedStudentsListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Kursen saknar studenter.");
+                return validated;
             }
 
-
-            return Validated;
+            validated = true;
+            return validated;
         }
     }
 }
