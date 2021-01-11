@@ -44,6 +44,11 @@ namespace grupp19_lab2
 
         }
 
+        public List<Student> HämtaStudent()
+        {
+            return studentLista;
+        }
+
         public List<Kursmoment> HämtaKursmoment()
         {
             return kursmoment;
