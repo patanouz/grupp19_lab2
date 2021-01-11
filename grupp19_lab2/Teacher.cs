@@ -10,15 +10,32 @@ namespace grupp19_lab2
     //får köra denna på engelska för det finns redan något som heter lärare och jag är dålig på synonymer och är för trött för att googla.
     public class Teacher : Person
     {
-        public int lärarId { get; private set; } 
-        public Teacher(string förnamn, string efternamn, string personnummer, int lärarId) : base(förnamn, efternamn, personnummer)
+        List<LärarLag> lärarlag = new List<LärarLag>();
+        private string email { get; set; }
+        private string telefonnummer { get; set; }
+        public Teacher(string förnamn, string efternamn, string personnummer) : base(förnamn, efternamn, personnummer)
         {
-            this.lärarId = lärarId;
+            
         }
 
-        public override int HämtaId()
+        //Konstruktor som huvudsakligen behövs för att skapa lärare ifrån databasen.
+        public Teacher(string Personnummer, string Förnamn, string Efternamn, string Email, string Telefonnummer) : base(Förnamn, Efternamn, Personnummer)
         {
-            return lärarId;
+
+            this.email = Email;
+            this.telefonnummer = Telefonnummer;
+                             
         }
+
+        public void LäggtillLärarlag(params LärarLag[] lärarlag)
+        {
+            this.lärarlag.AddRange(lärarlag);
+        }
+
+        public override string ToString()
+        {
+            return HämtaNamn();
+        }
+
     }
 }

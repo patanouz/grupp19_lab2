@@ -21,6 +21,12 @@ namespace grupp19_lab2
             kursLista = new List<Kurs>();
         }
 
+        //Konstruktor som huvudsakligen behövs för att skapa lärarlag ifrån databasen.
+        public LärarLag(Int64 Id, string LärarLista)
+        {
+            //TODO: fixa detta
+        }
+
         public void LäggTillLärare(params Teacher[] teacher)
         {
             lärarLista.AddRange(teacher);
@@ -59,8 +65,11 @@ namespace grupp19_lab2
         }
 
 
+        public override string ToString()
+        {
+            return HämtaNamn();
+        }
 
 
-        
     }
 }

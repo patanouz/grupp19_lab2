@@ -21,12 +21,6 @@ namespace grupp19_lab2
 
         }
 
-        public virtual int HämtaId()
-        {
-            //anta att -1 är en felkod, det ska inte gå att ha -1 som id. 
-            return -1;
-        }
-
         public string HämtaNamn()
         {
             return Förnamn + " " + efternamn;
