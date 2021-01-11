@@ -15,7 +15,15 @@ namespace grupp19_lab2
         {
             this.momentNamn = momentNamn;
             this.kurs = kurs;
+            kurs.LäggTillKursmoment(this); //lägger till sig själv i kursmoment. 
         }
+
+        //Konstruktor som huvudsakligen behövs för att skapa kursmoment ifrån databasen.
+        public Kursmoment(Int64 Id, string Momentnamn, Kurs kurs)
+        {
+            //TODO: Fixa detta
+        }
+
 
         public int HämtaKurskod()
         {

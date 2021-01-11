@@ -19,19 +19,21 @@ namespace grupp19_lab2
         Betyg betyg;
         Hjälp hjälp;
         HanteraKurser hanteraKurser;
-        
+
         Form[] allaSidor;
 
         Point startPoint = new Point(0, 0);
 
 
-        private CrappyFilebasedDatabase database;
-        
+        private IDatabaseConnection databas;
+
+
 
         public Form1()
         {
 
-            database = new CrappyFilebasedDatabase();
+            databas = new SqliteDatabaseConnection();
+
 
             InitializeComponent();
             studenter = new Studenter(this);
@@ -40,7 +42,7 @@ namespace grupp19_lab2
             betyg = new Betyg(this);
             hjälp = new Hjälp(this);
             hanteraKurser = new HanteraKurser(this);
-            
+
 
             allaSidor = new Form[6];
             allaSidor[0] = studenter;
@@ -50,10 +52,11 @@ namespace grupp19_lab2
             allaSidor[4] = hjälp;
             allaSidor[5] = hanteraKurser;
 
-            //Byt ut den mot riktig databas sen
+            //Databastest
+
+            //End databastest
 
 
-            
 
             foreach (Form f in allaSidor)
             {
@@ -76,7 +79,7 @@ namespace grupp19_lab2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected override void OnLoad(EventArgs e)
@@ -98,10 +101,10 @@ namespace grupp19_lab2
 
         }
 
-        
+
         private void resetVisiblity()
         {
-             foreach(Form f in allaSidor)
+            foreach (Form f in allaSidor)
             {
                 f.Hide();
                 f.Location = startPoint;
@@ -119,7 +122,7 @@ namespace grupp19_lab2
 
         private void kurserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -147,14 +150,8 @@ namespace grupp19_lab2
 
         }
 
-       public CrappyFilebasedDatabase Test()
-        {
-             if(database == null)
-            {
-                MessageBox.Show("WTF??");
-            }
-            return database;
-        }
+       
+    
 
         private void nyKursToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -180,6 +177,11 @@ namespace grupp19_lab2
                     item.ShowDropDown();
                 }
             }
+        }
+
+        public IDatabaseConnection Databasanslutning()
+        {
+            return databas;
         }
     }
 }

@@ -73,10 +73,10 @@ namespace grupp19_lab2
             kursLista.Add(new Kurs("Dataaa", 3));
             lararlagLista.Add(new LärarLag("Lag 1"));
             lararlagLista.Add(new LärarLag("B-laget"));
-            studentLista.Add(new Student("Rune", "Holta", "721108-5588", 1));
-            studentLista.Add(new Student("Brynolf", "Håkansson", "821108-4535", 2));
-            studentLista.Add(new Student("Jovarn", "Christersson", "951218-5682", 3));
-            studentLista.Add(new Student("Conny", "Oskarsson", "820530-5678", 4));
+            studentLista.Add(new Student("Rune", "Holta", "721108-5588"));
+            studentLista.Add(new Student("Brynolf", "Håkansson", "821108-4535"));
+            studentLista.Add(new Student("Jovarn", "Christersson", "951218-5682"));
+            studentLista.Add(new Student("Conny", "Oskarsson", "820530-5678"));
         }
 
         private void addKursmomentButton_Click(object sender, EventArgs e)

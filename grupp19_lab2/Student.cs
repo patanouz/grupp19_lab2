@@ -11,19 +11,20 @@ namespace grupp19_lab2
     public class Student : Person
     {
 
-        public int studentId { get; private set; }
+        
         private Dictionary<IBetygsunderlag, string> kurslista;
         public IReadOnlyDictionary<IBetygsunderlag, string> läsbarKurslista { get { return kurslista; } } //returnerar en endast läsbar Dictionary
 
-        public Student(string förnamn, string efternamn, string personnummer, int studentId) : base(förnamn, efternamn, personnummer)
+        public Student(string förnamn, string efternamn, string personnummer) : base(förnamn, efternamn, personnummer)
         {
             kurslista = new Dictionary<IBetygsunderlag, string>();
-            this.studentId = studentId;
+            
         }
 
-        public override int HämtaId()
+        //Konstruktor som huvudsakligen behövs för att skapa studenter ifrån databasen.
+        public Student(string Personnummer, string Förnamn, string Efternamn, string Email, string Telefonnummer, string Kurser, string Betyg) : base(Förnamn, Efternamn, Personnummer)
         {
-            return studentId;
+            //TODO: Hantera all denna skit. 
         }
 
         public void LäggTillBetysunderlag(IBetygsunderlag underlag)

@@ -57,3 +57,13 @@ C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj
 C:\Users\johannes\Documents\Visual Studio 2019\projects\projekt\grupp19_lab2\obj\Debug\grupp19_lab2.pdb
 C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\databas.db
 C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.HanteraKurser.resources
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Dapper.dll
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\System.Data.SQLite.dll
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Dapper.xml
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\System.Data.SQLite.xml
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.csproj.CopyComplete
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Antlr3.Runtime.dll
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\WebGrease.dll
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\norep\Documents\grupp19_lab2\grupp19_lab2\bin\Debug\Newtonsoft.Json.xml

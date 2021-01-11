@@ -27,10 +27,10 @@ namespace grupp19_lab2
         void RedigeraKursmoment(Kursmoment kursmoment);
 
         //Lärare
-        Lärare[] HämtaLärare();
-        void SparaNyLärare(Lärare lärare);
-        void TaBortLärare(Lärare lärare);
-        void RedigeraLärare(Lärare lärare);
+        Teacher[] HämtaLärare();
+        void SparaNyLärare(Teacher lärare);
+        void TaBortLärare(Teacher lärare);
+        void RedigeraLärare(Teacher lärare);
 
         //Lärarlag
         LärarLag[] HämtaLärarlag();
