@@ -12,7 +12,6 @@ namespace grupp19_lab2
 {
     public partial class Kurser : Form
     {
-
         Form1 form1;
         List<Kurs> kursLista = new List<Kurs>();
         List<Student> studentLista = new List<Student>();
@@ -20,10 +19,12 @@ namespace grupp19_lab2
         List<Kursmoment> kursmomentLista = new List<Kursmoment>();
         List<Student> addedStudents = new List<Student>();
         List<Student> availableStudents = new List<Student>();
+                
 
         public Kurser(Form1 form1)
         {
             this.form1 = form1;
+            kursLista.AddRange(form1.Databasanslutning().HämtaKurser());
             InitializeComponent();
             StartData();
             availableStudents.AddRange(studentLista);
@@ -37,7 +38,6 @@ namespace grupp19_lab2
         {
 
         }
-
 
         private void UppdateraLärarlagComboBox()
         {
@@ -54,15 +54,6 @@ namespace grupp19_lab2
             foreach (Student s in availableStudents)
             {
                 availableStudentsListBox.Items.Add(s.HämtaNamn());
-            }
-        }
-
-        private void UppdateraAddedStudentsListBox() // Används denna?
-        {
-            addedStudentsListBox.Items.Clear();
-            foreach (Student s in addedStudents)
-            {
-                addedStudentsListBox.Items.Add(s.HämtaNamn());
             }
         }
 
