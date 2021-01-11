@@ -16,7 +16,6 @@ namespace grupp19_lab2
         List<Kursmoment> kursmomentLista = new List<Kursmoment>();
         List<Student> studentLista = new List<Student>();
         
-
         Form1 form1;
         public HanteraKurser(Form1 form1)
         {
@@ -24,6 +23,7 @@ namespace grupp19_lab2
             InitializeComponent();
             StartData();
             UppdateraKurserListBox();
+            KollaVald();
         }
 
         private void HanteraKurser_Load(object sender, EventArgs e)
@@ -34,6 +34,10 @@ namespace grupp19_lab2
         {
             Kurs k1 = new Kurs("Roliga kursen", 1);
             Kurs k2 = new Kurs("Håriga kursen", 2);
+            LärarLag ll1 = new LärarLag("B-laget");
+            LärarLag ll2 = new LärarLag("A-lagarna");
+            k1.LäggTillLärarlag(ll1);
+            k2.LäggTillLärarlag(ll2);
             kursLista.Add(k1);
             kursLista.Add(k2);
             List<Kursmoment> kursMoment1 = new List<Kursmoment>();
@@ -59,7 +63,7 @@ namespace grupp19_lab2
             student2.Add(s4);
             student2.Add(s5);
             k1.LäggTillStudent(student1.ToArray());
-            k2.LäggTillStudent(student2.ToArray());
+            k2.LäggTillStudent(student2.ToArray());            
         }
 
         private void UppdateraKurserListBox()
@@ -73,6 +77,7 @@ namespace grupp19_lab2
 
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            KollaVald();
             kursmomentListBox.Items.Clear();
             kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment();
             foreach (Kursmoment km in kursmomentLista)
@@ -86,7 +91,81 @@ namespace grupp19_lab2
                 studentListBox.Items.Add(s.HämtaNamn());
             }
 
-            lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].;
+            lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
+        }
+
+        private void KollaVald()
+        {
+            if (kurserListBox.SelectedIndex == -1)
+            {
+                addKursButton.Enabled = false;
+                removeKursButton.Enabled = false;
+            }
+            else
+            {
+                addKursButton.Enabled = true;
+                removeKursButton.Enabled = true;
+            }
+            if (kursmomentListBox.SelectedIndex == -1)
+            {
+                addKursmomentButton.Enabled = false;
+                removeKursmomentButton.Enabled = false;
+            }
+            else
+            {
+                addKursmomentButton.Enabled = true;
+                removeKursmomentButton.Enabled = true;
+            }
+            if (studentListBox.SelectedIndex == -1)
+            {
+                addStudentButton.Enabled = false;
+                removeStudentButton.Enabled = false;
+            }
+            else
+            {
+                addStudentButton.Enabled = true;
+                removeStudentButton.Enabled = true;
+            }
+        }
+
+        private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KollaVald();
+        }
+
+        private void studentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KollaVald();
+        }
+
+        private void addKursButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeKursButton_Click(object sender, EventArgs e)
+        {
+            kursLista.RemoveAt(kurserListBox.SelectedIndex); // Kolla om denna funkar
+        }
+
+        private void addKursmomentButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeKursmomentButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeStudentButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
