@@ -20,7 +20,7 @@ namespace grupp19_lab2
         {
             this.form1 = form1;
             InitializeComponent();
-            studentLista.AddRange(form1.Test().HämtaStudenter());
+            //studentLista.AddRange(form1.Test().HämtaStudenter());
             UppdateraStudentListBox();
         }
 
@@ -102,11 +102,11 @@ namespace grupp19_lab2
 
         private void SparaButton_Click(object sender, EventArgs e)
         {
-            Student nyStudent = new Student("", "", "", 0);
+            //Student nyStudent = new Student("", "", "", 0);
             //studentLista[studentListBox.SelectedIndex].personnummer = PersonnummerTextBox.Text;
             studentLista[studentListBox.SelectedIndex].Förnamn = FörnamnTextBox.Text;
             studentLista[studentListBox.SelectedIndex].efternamn = EfternamnTextBox.Text;
-            studentLista.Add(nyStudent);
+            //studentLista.Add(nyStudent);
             UppdateraStudentListBox(); // Metod som rensar listan och sedan printar alla nya ändringar som sker.
         }
 

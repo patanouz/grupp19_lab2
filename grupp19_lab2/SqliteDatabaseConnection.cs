@@ -56,6 +56,9 @@ namespace grupp19_lab2
             lärarlagLista[1].LäggTillLärare(lärarLista[1]);
             kursLista[1].LäggTillLärarlag(lärarlagLista[1]);
 
+            List<Type> test = new List<Type>();
+
+            
 
         }
 

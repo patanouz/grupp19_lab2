@@ -52,7 +52,7 @@ namespace grupp19_lab2
             kursLista[1].LäggTillKursmoment(kursMoment2.ToArray());
             List<Student> student1 = new List<Student>();
             List<Student> student2 = new List<Student>();
-            Student s1 = new Student("Rune", "Holta", "820529-8554", 1);
+          /*  Student s1 = new Student("Rune", "Holta", "820529-8554", 1);
             Student s2 = new Student("Jovarn", "Christersson", "830430-8554", 2);
             Student s3 = new Student("Gert-Ove", "Möller", "720529-8554", 3);
             Student s4 = new Student("Brynolf", "Håkansson", "520529-8554", 4);
@@ -63,7 +63,8 @@ namespace grupp19_lab2
             student2.Add(s4);
             student2.Add(s5);
             k1.LäggTillStudent(student1.ToArray());
-            k2.LäggTillStudent(student2.ToArray());            
+            k2.LäggTillStudent(student2.ToArray());  
+          */
         }
 
         private void UppdateraKurserListBox()

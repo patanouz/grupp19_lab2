@@ -8,6 +8,6 @@ namespace grupp19_lab2
 {
     interface IPerson
     {
-        int HämtaId();
+        string HämtaNamn();
     }
 }
