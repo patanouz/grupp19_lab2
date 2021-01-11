@@ -41,5 +41,10 @@ namespace grupp19_lab2
         {
             this.kurs = kurs;
         }
+
+        public override string ToString()
+        {
+            return momentNamn;
+        }
     }
 }
