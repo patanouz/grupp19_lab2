@@ -13,17 +13,54 @@ namespace grupp19_lab2
     public partial class Betyg : Form
     {
         Form1 form1;
-        public Betyg(Form1 form1) // Hej Anton // Ät gröt
+        List<Student> studentLista = new List<Student>();
+        private SqliteDatabaseConnection databas;
+        public Betyg(Form1 form1)
         {
-        
-        
+
             this.form1 = form1;
             InitializeComponent();
+            databas = new SqliteDatabaseConnection();
+            ListBox1.Items.AddRange(databas.HämtaStudenter());
+            ListBox2.Items.AddRange(databas.HämtaKurser());
+
         }
 
         private void Betyg_Load(object sender, EventArgs e)
         {
 
+
+
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Elev_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqliteDatabaseConnection com = new SqliteDatabaseConnection();
+            ListBox1.DataSource = com.HämtaStudenter();
+
+
+        }
+
+        private void ListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqliteDatabaseConnection com = new SqliteDatabaseConnection();
+            ListBox2.DataSource = com.HämtaKurser();
+
+
+        }
+
+        private void ListBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+
     }
 }
