@@ -8,26 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Denna funkar nu!
+
 namespace grupp19_lab2
 {
     public partial class Kurser : Form
     {
         Form1 form1;
-        List<Kurs> kursLista = new List<Kurs>();
-        List<Student> studentLista = new List<Student>();
         List<LärarLag> lararlagLista = new List<LärarLag>();
         List<Kursmoment> kursmomentLista = new List<Kursmoment>();
         List<Student> addedStudents = new List<Student>();
-        List<Student> availableStudents = new List<Student>();
-                
+        List<Student> availableStudents = new List<Student>();    
 
         public Kurser(Form1 form1)
         {
             this.form1 = form1;
-            kursLista.AddRange(form1.Databasanslutning().HämtaKurser());
             InitializeComponent();
-            StartData();
-            availableStudents.AddRange(studentLista);
+            lararlagLista.AddRange(form1.Databasanslutning().HämtaLärarlag());
+            availableStudents.AddRange(form1.Databasanslutning().HämtaStudenter());
             UppdateraLärarlagComboBox();
             UppdateraStudenterListBox();
             KollaVald();
@@ -53,22 +51,10 @@ namespace grupp19_lab2
             availableStudentsListBox.Items.Clear();
             foreach (Student s in availableStudents)
             {
-                availableStudentsListBox.Items.Add(s.HämtaNamn());
+                availableStudentsListBox.Items.Add(s);
             }
         }
 
-        private void StartData()
-        {
-            kursLista.Add(new Kurs("Roliga kursen", 1));
-            kursLista.Add(new Kurs("OOAD", 2));
-            kursLista.Add(new Kurs("Dataaa", 3));
-            lararlagLista.Add(new LärarLag("Lag 1"));
-            lararlagLista.Add(new LärarLag("B-laget"));
-            studentLista.Add(new Student("Rune", "Holta", "721108-5588"));
-            studentLista.Add(new Student("Brynolf", "Håkansson", "821108-4535"));
-            studentLista.Add(new Student("Jovarn", "Christersson", "951218-5682"));
-            studentLista.Add(new Student("Conny", "Oskarsson", "820530-5678"));
-        }
 
         private void addKursmomentButton_Click(object sender, EventArgs e)
         {
@@ -89,9 +75,13 @@ namespace grupp19_lab2
                     kursmomentLista.Add(km);
 
                 }
-
-                k.LäggTillKursmoment(kursmomentLista.ToArray());
+                foreach (Student s in addedStudentsListBox.Items)
+                {
+                    addedStudents.Add(s);
+                    
+                }
                 k.LäggTillStudent(addedStudents.ToArray());
+                k.LäggTillLärarlag(new LärarLag(lärarlagComboBox.Text));
                 addedStudentsListBox.Items.Clear();
                 availableStudentsListBox.Items.Clear();
                 UppdateraStudenterListBox();
@@ -99,8 +89,9 @@ namespace grupp19_lab2
                 kursNamnTextBox.Clear();
                 kursmomentListBox.Items.Clear();
                 addedStudents.Clear();
-                // Lägg till lärarlag
-                // Skriv kurs till databasen
+                form1.Databasanslutning().SparaNyKurs(k);
+                MessageBox.Show($"Kursen {k.HämtaNamn()} är tillagd");
+
             }
         }
 
@@ -151,7 +142,7 @@ namespace grupp19_lab2
             KollaVald();
         }
 
-        private bool ValidateForm() // Skriv klart!
+        private bool ValidateForm()
         {
             bool validated = false;
 
