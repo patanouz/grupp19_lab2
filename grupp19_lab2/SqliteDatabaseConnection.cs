@@ -20,7 +20,7 @@ namespace grupp19_lab2
         List<LärarLag> lärarlagLista = new List<LärarLag>();
 
 
-        
+
         public SqliteDatabaseConnection()
         {
             //Ifyllnadsdata
@@ -32,10 +32,10 @@ namespace grupp19_lab2
             studentLista.Add(new Student("Caroline", "Carlsson", "098765"));
 
             //Kurser
-            kursLista.Add(new Kurs("Test av IT-system", 1));
-            kursLista.Add(new Kurs("Objektorienterad Systemutveckling 1", 2));
-            kursLista.Add(new Kurs("Databasteknik", 3));
-            kursLista.Add(new Kurs("Webbdesign", 4));
+            kursLista.Add(new Kurs("Test av IT-system", 0));
+            kursLista.Add(new Kurs("Objektorienterad Systemutveckling 1", 1));
+            kursLista.Add(new Kurs("Databasteknik", 2));
+            kursLista.Add(new Kurs("Webbdesign", 3));
 
             //Kursmoment
             kursmomentLista.Add(new Kursmoment("Testtenta", kursLista[0]));
@@ -44,9 +44,12 @@ namespace grupp19_lab2
             kursmomentLista.Add(new Kursmoment("Programmeringstenta", kursLista[3]));
 
             //Lärare
-            lärarLista.Add(new Teacher("Bim", "Fagerström", "123"));
-            lärarLista.Add(new Teacher("Johannes", "Sahlin", "456"));
-            
+            lärarLista.Add(new Teacher("Brynolf", "Håkansson", "123"));
+            lärarLista.Add(new Teacher("Rune", "Holta", "456"));
+
+            //Studenter i kurs
+            kursLista[0].LäggTillStudent(studentLista.ToArray());
+            kursLista[2].LäggTillStudent(studentLista.ToArray());
 
             //Lärarlag
             lärarlagLista.Add(new LärarLag("Första lärarlaget"));
