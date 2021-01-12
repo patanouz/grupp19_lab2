@@ -42,6 +42,26 @@ namespace grupp19_lab2
             }
         }
 
+        private void UppdateraKursmomentListBox()
+        {
+            kursmomentListBox.Items.Clear();
+            kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment();
+            foreach (Kursmoment km in kursmomentLista)
+            {
+                kursmomentListBox.Items.Add(km.HämtaNamn());
+            }
+        }
+
+        private void UppdateraStudentListBox()
+        {
+            studentListBox.Items.Clear();
+            studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
+            foreach (Student s in studentLista)
+            {
+                studentListBox.Items.Add(s.HämtaNamn());
+            }
+        }
+
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (kurserListBox.SelectedIndex != -1)
@@ -50,16 +70,16 @@ namespace grupp19_lab2
 
                 KollaVald();
                 kursmomentListBox.Items.Clear();
-                kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment();
-                foreach (Kursmoment km in kursmomentLista)
+
+                if ((kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment()) != null)
                 {
-                    kursmomentListBox.Items.Add(km.HämtaNamn());
+                    UppdateraKursmomentListBox();
                 }
+                
                 studentListBox.Items.Clear();
-                studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
-                foreach (Student s in studentLista)
+                if ((studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter()) != null)
                 {
-                    studentListBox.Items.Add(s.HämtaNamn());
+                    UppdateraStudentListBox();
                 }
 
                 KollaLärarlag();
@@ -133,7 +153,9 @@ namespace grupp19_lab2
 
         private void removeKursButton_Click(object sender, EventArgs e)
         {
-            kursLista.RemoveAt(kurserListBox.SelectedIndex); // Kolla om denna funkar
+            MessageBox.Show($"Vill du verkligen ta bort {kursLista[kurserListBox.SelectedIndex].HämtaNamn()}");
+            kursLista.RemoveAt(kurserListBox.SelectedIndex);
+            UppdateraKurserListBox();
         }
 
         private void addKursmomentButton_Click(object sender, EventArgs e)
@@ -143,7 +165,10 @@ namespace grupp19_lab2
 
         private void removeKursmomentButton_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show($"Vill du verkligen ta bort {kursmomentLista[kursmomentListBox.SelectedIndex].HämtaNamn()}");
+            kursmomentLista.RemoveAt(kursmomentListBox.SelectedIndex);
+            UppdateraKursmomentListBox();
+
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
@@ -153,8 +178,10 @@ namespace grupp19_lab2
 
         private void removeStudentButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show($"Vill du verkligen ta bort {studentLista[studentListBox.SelectedIndex].HämtaNamn()}");
+            studentLista.RemoveAt(studentListBox.SelectedIndex);
+            UppdateraStudentListBox();
 
-            
         }
     }
 }
