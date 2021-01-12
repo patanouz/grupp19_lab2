@@ -47,15 +47,10 @@ namespace grupp19_lab2
             allaSidor = new Form[6];
             allaSidor[0] = studenter;
             allaSidor[1] = kurser;
-            allaSidor[2] = lärare;
+            allaSidor[2] = lärare;  
             allaSidor[3] = betyg;
             allaSidor[4] = hjälp;
             allaSidor[5] = hanteraKurser;
-
-            //Databastest
-
-            //End databastest
-
 
 
             foreach (Form f in allaSidor)
@@ -66,14 +61,6 @@ namespace grupp19_lab2
             resetVisiblity();
             studenter.Show();
 
-            /*
-            studenter.BackColor = Color.Maroon;
-            kurser.BackColor = Color.Aqua;
-            lärare.BackColor = Color.Beige;
-            betyg.BackColor = Color.Chocolate;
-            hjälp.BackColor = Color.Coral;
-            
-            */
 
         }
 
