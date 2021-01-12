@@ -107,9 +107,11 @@ namespace grupp19_lab2
             if (HållerPåAttSkapaNyStudent)
             {
                 Student nyStudent = new Student(FörnamnTextBox.Text, EfternamnTextBox.Text, PersonnummerTextBox.Text); //TODO: Lägga till saknade attribut sen.                                                                                                     //TelefonnummerTextBox.Text, Eposttextbox.text
-                studentLista.Add(nyStudent);
+                form1.Databasanslutning().SparaNyStudent(nyStudent);
                 HållerPåAttSkapaNyStudent = false;
                 PersonnummerTextBox.Enabled = false;
+                studentLista.Clear();
+                studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
                 UppdateraStudentListBox();
             }
             // Normalt sett hade vi inte behövt loopa genom det, men eftersom det går att söka behövs den.
@@ -140,8 +142,10 @@ namespace grupp19_lab2
             }
             if (studentLista.Count <= 0) { return; }
             if (söktaStudenter.Count<studentListBox.Items.Count)
-            {
-                studentLista.RemoveAt(studentListBox.SelectedIndex);
+            {                
+                form1.Databasanslutning().TaBortStudent(studentLista[studentListBox.SelectedIndex]);
+                studentLista.Clear();
+                studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
                 UppdateraStudentListBox();
                 PersonnummerTextBox.Text = "";
                 FörnamnTextBox.Text = "";
@@ -150,7 +154,10 @@ namespace grupp19_lab2
                 EpostTextBox.Text = "";
                 return;
             }
-            studentLista.Remove(söktaStudenter[studentListBox.SelectedIndex]);
+            form1.Databasanslutning().TaBortStudent((söktaStudenter[studentListBox.SelectedIndex]));
+            studentLista.Clear();
+            studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
+
             //TODO: Ska läggas till en messagebox som frågar om man verkligen vill...
             UppdateraStudentListBox();
         }
