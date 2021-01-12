@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Nu visas det rätt i respektive lista! Kvar är att kunna lägga till, radera och redigera.
+
 namespace grupp19_lab2
 {
     public partial class HanteraKurser : Form
@@ -42,21 +44,28 @@ namespace grupp19_lab2
 
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KollaVald();
-            kursmomentListBox.Items.Clear();
-            kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment();
-            foreach (Kursmoment km in kursmomentLista)
+            if (kurserListBox.SelectedIndex != -1)
             {
-                kursmomentListBox.Items.Add(km.HämtaNamn());
-            }
-            studentListBox.Items.Clear();
-            studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudent();
-            foreach (Student s in studentLista)
-            {
-                studentListBox.Items.Add(s.HämtaNamn());
-            }
 
-            lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
+
+                KollaVald();
+                kursmomentListBox.Items.Clear();
+                kursmomentLista = kursLista[kurserListBox.SelectedIndex].HämtaKursmoment();
+                foreach (Kursmoment km in kursmomentLista)
+                {
+                    kursmomentListBox.Items.Add(km.HämtaNamn());
+                }
+                studentListBox.Items.Clear();
+                studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
+                foreach (Student s in studentLista)
+                {
+                    studentListBox.Items.Add(s.HämtaNamn());
+                }
+
+                KollaLärarlag();
+
+            }                   
+            
         }
 
         private void KollaVald()
@@ -93,6 +102,20 @@ namespace grupp19_lab2
             }
         }
 
+        private void KollaLärarlag()
+        {
+            if (kursLista[kurserListBox.SelectedIndex].HämtaLärarlag() == null)
+            {
+
+                lärarlagTextBox.Text = "Lärarlag saknas";
+            }
+            else
+            {
+
+                lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
+            }
+        }
+
         private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             KollaVald();
@@ -120,17 +143,18 @@ namespace grupp19_lab2
 
         private void removeKursmomentButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void removeStudentButton_Click(object sender, EventArgs e)
         {
 
+            
         }
     }
 }
