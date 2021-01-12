@@ -90,7 +90,7 @@ namespace grupp19_lab2
                 kursmomentListBox.Items.Clear();
                 addedStudents.Clear();
                 form1.Databasanslutning().SparaNyKurs(k);
-                MessageBox.Show($"Kursen {k.HämtaNamn()} är tillagd");
+                MessageBox.Show($"Kursen {k.HämtaNamn()} är tillagd.", "Info");
 
             }
         }
@@ -148,22 +148,22 @@ namespace grupp19_lab2
 
             if (kursNamnTextBox.Text == "")
             {
-                MessageBox.Show("Kursen saknar namn.");
+                MessageBox.Show("Kursen saknar namn.", "Varning");
                 return validated;
             }
             if (lärarlagComboBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Kursen saknar lärarlag.");
+                MessageBox.Show("Kursen saknar lärarlag.", "Varning");
                 return validated;
             }
             if (kursmomentListBox.Items.Count == 0)
             {
-                MessageBox.Show("Kursen saknar kursmoment.");
+                MessageBox.Show("Kursen saknar kursmoment.", "Varning");
                 return validated;
             }
             if (addedStudentsListBox.Items.Count == 0)
             {
-                MessageBox.Show("Kursen saknar studenter.");
+                MessageBox.Show("Kursen saknar studenter.", "Varning");
                 return validated;
             }
 
