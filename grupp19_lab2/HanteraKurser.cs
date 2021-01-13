@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Nu visas det rätt i respektive lista! Kvar är att kunna lägga till, radera och redigera.
-
 namespace grupp19_lab2
 {
     public partial class HanteraKurser : Form
@@ -82,8 +80,7 @@ namespace grupp19_lab2
                         comboBoxStudenter.Add(s);
                     }
                 }
-            }
-            
+            }            
         }
         
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,7 +250,7 @@ namespace grupp19_lab2
         {
             if (kursLista[kurserListBox.SelectedIndex].HämtaLärarlag() == null)
             {
-                aktuelltLärarlagLabel.Text = "Lärarlag saknas";
+                aktuelltLärarlagLabel.Text = "Saknas";
 
             }
             else
@@ -265,14 +262,17 @@ namespace grupp19_lab2
 
         private void addKursmomentButton_Click_1(object sender, EventArgs e)
         {
-            if (addKursmomentTextBox.Text == null)
+            if (addKursmomentTextBox.Text == null || addKursmomentTextBox.Text == "")
             {
                 MessageBox.Show("Kursmoment saknar namn.", "Varning");
             }
-
-            Kursmoment km = new Kursmoment(addKursmomentTextBox.Text, kursLista[kurserListBox.SelectedIndex]);
-            UppdateraKursmomentListBox();
-            addKursmomentTextBox.Clear();
+            else
+            {
+                Kursmoment km = new Kursmoment(addKursmomentTextBox.Text, kursLista[kurserListBox.SelectedIndex]);
+                UppdateraKursmomentListBox();
+                addKursmomentTextBox.Clear();
+            }
+            
         }
 
         private void addStudentButton_Click_1(object sender, EventArgs e)
@@ -283,8 +283,7 @@ namespace grupp19_lab2
                 UppdateraStudentListBox();
                 UppdateraStudentComboBox();
 
-            }
-                        
+            }                        
         }
 
         private void addStudentComboBox_SelectedIndexChanged(object sender, EventArgs e)
