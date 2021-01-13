@@ -43,6 +43,8 @@ namespace grupp19_lab2
             this.addedStudentsListBox = new System.Windows.Forms.ListBox();
             this.addStudentbutton = new System.Windows.Forms.Button();
             this.removeStudentButton = new System.Windows.Forms.Button();
+            this.tillgängligaStudenterLabel = new System.Windows.Forms.Label();
+            this.tillagdaStudenterLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lärarlagComboBox
@@ -109,7 +111,7 @@ namespace grupp19_lab2
             this.addKursmomentButton.Name = "addKursmomentButton";
             this.addKursmomentButton.Size = new System.Drawing.Size(120, 53);
             this.addKursmomentButton.TabIndex = 8;
-            this.addKursmomentButton.Text = "Lägg till";
+            this.addKursmomentButton.Text = "Lägg till kursmoment";
             this.addKursmomentButton.UseVisualStyleBackColor = true;
             this.addKursmomentButton.Click += new System.EventHandler(this.addKursmomentButton_Click);
             // 
@@ -172,11 +174,31 @@ namespace grupp19_lab2
             this.removeStudentButton.UseVisualStyleBackColor = true;
             this.removeStudentButton.Click += new System.EventHandler(this.removeStudentButton_Click);
             // 
+            // tillgängligaStudenterLabel
+            // 
+            this.tillgängligaStudenterLabel.AutoSize = true;
+            this.tillgängligaStudenterLabel.Location = new System.Drawing.Point(594, 45);
+            this.tillgängligaStudenterLabel.Name = "tillgängligaStudenterLabel";
+            this.tillgängligaStudenterLabel.Size = new System.Drawing.Size(159, 20);
+            this.tillgängligaStudenterLabel.TabIndex = 15;
+            this.tillgängligaStudenterLabel.Text = "Tillgängliga studenter";
+            // 
+            // tillagdaStudenterLabel
+            // 
+            this.tillagdaStudenterLabel.AutoSize = true;
+            this.tillagdaStudenterLabel.Location = new System.Drawing.Point(912, 45);
+            this.tillagdaStudenterLabel.Name = "tillagdaStudenterLabel";
+            this.tillagdaStudenterLabel.Size = new System.Drawing.Size(135, 20);
+            this.tillagdaStudenterLabel.TabIndex = 16;
+            this.tillagdaStudenterLabel.Text = "Tillagda studenter";
+            // 
             // Kurser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 826);
+            this.Controls.Add(this.tillagdaStudenterLabel);
+            this.Controls.Add(this.tillgängligaStudenterLabel);
             this.Controls.Add(this.removeStudentButton);
             this.Controls.Add(this.addStudentbutton);
             this.Controls.Add(this.addedStudentsListBox);
@@ -216,5 +238,7 @@ namespace grupp19_lab2
         private System.Windows.Forms.ListBox addedStudentsListBox;
         private System.Windows.Forms.Button addStudentbutton;
         private System.Windows.Forms.Button removeStudentButton;
+        private System.Windows.Forms.Label tillgängligaStudenterLabel;
+        private System.Windows.Forms.Label tillagdaStudenterLabel;
     }
 }

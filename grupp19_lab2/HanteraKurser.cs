@@ -155,13 +155,16 @@ namespace grupp19_lab2
 
         private void removeKursButton_Click(object sender, EventArgs e)
         {
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort {kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
             if (resultat == DialogResult.Yes)
             {
                 kursLista.RemoveAt(kurserListBox.SelectedIndex);
                 UppdateraKurserListBox();
                 kursmomentListBox.Items.Clear();
                 studentListBox.Items.Clear();
+                kurserListBox.SelectedItem = -1;
+                KollaVald();
             }
             
         }
@@ -173,12 +176,16 @@ namespace grupp19_lab2
 
         private void removeKursmomentButton_Click(object sender, EventArgs e)
         {            
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort {kursmomentLista[kursmomentListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
+                $"{kursmomentLista[kursmomentListBox.SelectedIndex].HämtaNamn()} från kursen " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
 
             if (resultat == DialogResult.Yes)
             {
                 kursmomentLista.RemoveAt(kursmomentListBox.SelectedIndex);
                 UppdateraKursmomentListBox();
+                kursmomentListBox.SelectedIndex = -1;
+                KollaVald();
             }
             
         }
@@ -188,13 +195,17 @@ namespace grupp19_lab2
             
         }
 
-        private void removeStudentButton_Click(object sender, EventArgs e) // Finns en bugg här, listan är markerad men ändå inte när man tagit bort en student.
+        private void removeStudentButton_Click(object sender, EventArgs e)
         {
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort {studentLista[studentListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
+                $"{studentLista[studentListBox.SelectedIndex].HämtaNamn()} från kursen " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
             if (resultat == DialogResult.Yes)
             {
                 studentLista.RemoveAt(studentListBox.SelectedIndex);
                 UppdateraStudentListBox();
+                studentListBox.SelectedItem = -1;
+                KollaVald();
             }            
 
         }
