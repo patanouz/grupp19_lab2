@@ -3,6 +3,7 @@ namespace grupp19_lab2
 {
     partial class Kurser
     {
+        //kommentar
         /// <summary>
         /// Required designer variable.
         /// </summary>
