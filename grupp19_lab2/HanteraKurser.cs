@@ -277,10 +277,14 @@ namespace grupp19_lab2
 
         private void addStudentButton_Click_1(object sender, EventArgs e)
         {
+            if (addStudentComboBox.SelectedIndex != -1)
+            {
                 kursLista[kurserListBox.SelectedIndex].LäggTillStudent(comboBoxStudenter[addStudentComboBox.SelectedIndex]);
                 UppdateraStudentListBox();
                 UppdateraStudentComboBox();
-        
+
+            }
+                        
         }
 
         private void addStudentComboBox_SelectedIndexChanged(object sender, EventArgs e)
