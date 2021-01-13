@@ -161,7 +161,7 @@ namespace grupp19_lab2
         {
             resetVisiblity();
             hanteraLärarlag.Show();
-            lärare.Location = startPoint;
+            hanteraLärarlag.Location = startPoint;
 
         }
 
@@ -175,6 +175,11 @@ namespace grupp19_lab2
                     item.ShowDropDown();
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
