@@ -55,7 +55,9 @@ namespace grupp19_lab2
 
         private void Elev_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
+            textBox1.Text = ListBox1.SelectedItem.ToString();
+
 
 
         }
@@ -74,6 +76,17 @@ namespace grupp19_lab2
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
