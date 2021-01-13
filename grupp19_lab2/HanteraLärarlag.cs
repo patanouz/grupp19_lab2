@@ -24,9 +24,11 @@ namespace grupp19_lab2
             lararlagLista.AddRange(form1.Databasanslutning().HämtaLärarlag());
             UpdateAvailableTeacherListBox();
             Teacher[] q = new Teacher[1];
-            Teacher l = new Teacher("testc", "testc", "testc");
-            q[0] = l;
-            chosenTeacherListBox.Items.AddRange(q);
+
+            //Anton: Tog bort denna skiten, den blir fel och jag tror den har spökat för dig med.
+            //Teacher l = new Teacher("testc", "testc", "testc");
+            //q[0] = l;
+            //chosenTeacherListBox.Items.AddRange(q);
         }
 
         private void UpdateAvailableTeacherListBox()
@@ -52,10 +54,27 @@ namespace grupp19_lab2
         {
             if (availableTeacherListBox.SelectedIndex > -1)
             {
-               Teacher k = new Teacher(lärarLista[availableTeacherListBox.SelectedIndex].personnummer, lärarLista[availableTeacherListBox.SelectedIndex].Förnamn, lärarLista[availableTeacherListBox.SelectedIndex].efternamn);
+
+                /*Anton: här gjrode jag såhär:
+                 * 1. Lägg till i andra listan med listboxindex
+                 * 2. Lägg till text i andra listbox utefter index
+                 * 3. Tog bort ifrån första listan
+                 * 4. Tog bort ifrån andra listboxen utefter index.
+                 * 
+                 * Alltså studentlista först, och listbox därefter.
+                 */
+                newTeacherList.Add(lärarLista[availableTeacherListBox.SelectedIndex]);
+                chosenTeacherListBox.Items.Add(lärarLista[availableTeacherListBox.SelectedIndex]);
+                lärarLista.RemoveAt(availableTeacherListBox.SelectedIndex);
+                availableTeacherListBox.Items.RemoveAt(availableTeacherListBox.SelectedIndex);
+
+
+               /*Teacher k = new Teacher(lärarLista[availableTeacherListBox.SelectedIndex].personnummer, lärarLista[availableTeacherListBox.SelectedIndex].Förnamn, lärarLista[availableTeacherListBox.SelectedIndex].efternamn);
                 chosenTeacherListBox.Items.Add(availableTeacherListBox.Items[availableTeacherListBox.SelectedIndex]);
                 availableTeacherListBox.Items.Remove(availableTeacherListBox.Items[availableTeacherListBox.SelectedIndex]);
                 newTeacherList.Add(k);
+
+                */
             }
         }
 
@@ -63,6 +82,24 @@ namespace grupp19_lab2
         {
             if (chosenTeacherListBox.SelectedIndex > -1)
             {
+
+                /*Anton: här gjrode jag såhär:
+                 * 1. Lägg till i andra listan med listboxindex
+                 * 2. Lägg till text i andra listbox utefter index
+                 * 3. Tog bort ifrån första listan
+                 * 4. Tog bort ifrån andra listboxen utefter index.
+                 * 
+                 * Alltså studentlista först, och listbox därefter.
+                 */
+                lärarLista.Add(newTeacherList[chosenTeacherListBox.SelectedIndex]);
+                availableTeacherListBox.Items.Add(newTeacherList[chosenTeacherListBox.SelectedIndex]);
+                newTeacherList.RemoveAt(chosenTeacherListBox.SelectedIndex);
+                chosenTeacherListBox.Items.RemoveAt(chosenTeacherListBox.SelectedIndex);
+
+                
+
+
+
                 /* MessageBox.Show(chosenTeacherListBox.Items[chosenTeacherListBox.SelectedIndex].ToString());
                  MessageBox.Show(chosenTeacherListBox.Items[chosenTeacherListBox.SelectedIndex].GetType() + "");
                  foreach (Teacher item in newTeacherList)
@@ -74,6 +111,20 @@ namespace grupp19_lab2
                  } */
 
                 // Vill ta bort objekthelvetet som är likadant i listbox och med listan "newTeacherList"
+
+                //Anton: Detta var min skit i felsökningssyfte.
+                /*string s = "";
+                foreach (var item in newTeacherList)
+                {
+                    s += item;
+                    s += "\n";
+                }
+
+                MessageBox.Show(s);
+                */
+
+                //Detta var din skit
+                /*
                 bool argPojke = false;
                 foreach (Teacher item in newTeacherList)
                 {
@@ -88,10 +139,10 @@ namespace grupp19_lab2
                 }
                 availableTeacherListBox.Items.Add(chosenTeacherListBox.Items[chosenTeacherListBox.SelectedIndex]);
                 chosenTeacherListBox.Items.Remove(chosenTeacherListBox.Items[chosenTeacherListBox.SelectedIndex]);
-                foreach (Teacher item in newTeacherList)
+                /*foreach (Teacher item in newTeacherList)
                 {
                     MessageBox.Show(item + "");
-                }
+                }*/
                 //  MessageBox.Show(chosenTeacherListBox.Items[chosenTeacherListBox.SelectedIndex].ToString());
                 int foundIndex;
             }
@@ -121,6 +172,11 @@ namespace grupp19_lab2
         {
             // Teacher T = (Teacher)chosenTeacherListBox.Items[0]; 
            // MessageBox.Show(chosenTeacherListBox.SelectedItem.GetType() + "");
+        }
+
+        private void HanteraLärarlag_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

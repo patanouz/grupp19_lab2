@@ -122,6 +122,7 @@ namespace grupp19_lab2
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HanteraLärarlag";
             this.Text = "HanteraLärarlag";
+            this.Load += new System.EventHandler(this.HanteraLärarlag_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
