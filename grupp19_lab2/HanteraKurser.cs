@@ -64,6 +64,9 @@ namespace grupp19_lab2
 
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            studentListBox.SelectedIndex = -1;
+            kursmomentListBox.SelectedIndex = -1;
+
             if (kurserListBox.SelectedIndex != -1)
             {
                 KollaVald();
@@ -87,6 +90,93 @@ namespace grupp19_lab2
             
         }
 
+        private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KollaVald();
+
+        }
+
+        private void studentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KollaVald();
+
+        }
+
+        private void addKursButton_Click(object sender, EventArgs e)
+        {
+            // Gå till andra layouten "Ny kurs".
+        }
+
+        private void removeKursButton_Click(object sender, EventArgs e)
+        {
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort kursen " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+            if (resultat == DialogResult.Yes)
+            {
+                kursLista.RemoveAt(kurserListBox.SelectedIndex);
+                UppdateraKurserListBox();
+                kursmomentListBox.Items.Clear();
+                studentListBox.Items.Clear();
+                kurserListBox.SelectedItem = -1;
+                KollaVald();
+            }
+            
+        }
+
+        private void addKursmomentButton_Click(object sender, EventArgs e)
+        {
+            // Lägg till nya kursmoment
+        }
+
+        private void removeKursmomentButton_Click(object sender, EventArgs e)
+        {            
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
+                $"{kursmomentLista[kursmomentListBox.SelectedIndex].HämtaNamn()} från kursen " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+
+            if (resultat == DialogResult.Yes)
+            {
+                kursmomentLista.RemoveAt(kursmomentListBox.SelectedIndex);
+                UppdateraKursmomentListBox();
+                kursmomentListBox.SelectedIndex = -1;
+                KollaVald();
+            }
+            
+        }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+            // Lägg till fler studenter
+        }
+
+        private void removeStudentButton_Click(object sender, EventArgs e)
+        {
+            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
+                $"{studentLista[studentListBox.SelectedIndex].HämtaNamn()} från kursen " +
+                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
+            if (resultat == DialogResult.Yes)
+            {
+                studentLista.RemoveAt(studentListBox.SelectedIndex);
+                UppdateraStudentListBox();
+                studentListBox.SelectedItem = -1;
+                KollaVald();
+            }            
+
+        }
+
+        private void addLärarlagButton_Click(object sender, EventArgs e)
+        {
+           // Lägg till lärarlag.
+
+        }
+
+        private void removeLärarlagButton_Click(object sender, EventArgs e)
+        {
+            
+            // Ta bort lärarlag.
+
+        }
+
         private void KollaVald()
         {
             if (kurserListBox.SelectedIndex == -1)
@@ -94,16 +184,21 @@ namespace grupp19_lab2
                 addKursButton.Enabled = true;
                 removeKursButton.Enabled = false;
                 addStudentButton.Enabled = false;
+                addKursmomentButton.Enabled = false;
+                addLärarlagButton.Enabled = false;
+                removeLärarlagButton.Enabled = false;
+
             }
             else
             {
                 addKursButton.Enabled = true;
                 removeKursButton.Enabled = true;
                 addStudentButton.Enabled = true;
+                addKursmomentButton.Enabled = true;
+
             }
             if (kursmomentListBox.SelectedIndex == -1)
             {
-                addKursmomentButton.Enabled = false;
                 removeKursmomentButton.Enabled = false;
             }
             else
@@ -126,89 +221,16 @@ namespace grupp19_lab2
         {
             if (kursLista[kurserListBox.SelectedIndex].HämtaLärarlag() == null)
             {
-
                 lärarlagTextBox.Text = "Lärarlag saknas";
+                addLärarlagButton.Enabled = true;
+                removeLärarlagButton.Enabled = false;
             }
             else
             {
-
                 lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
+                addLärarlagButton.Enabled = true;
+                removeLärarlagButton.Enabled = true;
             }
         }
-
-        private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            KollaVald();
-
-        }
-
-        private void studentListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            KollaVald();
-
-        }
-
-        private void addKursButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void removeKursButton_Click(object sender, EventArgs e)
-        {
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
-                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
-            if (resultat == DialogResult.Yes)
-            {
-                kursLista.RemoveAt(kurserListBox.SelectedIndex);
-                UppdateraKurserListBox();
-                kursmomentListBox.Items.Clear();
-                studentListBox.Items.Clear();
-                kurserListBox.SelectedItem = -1;
-                KollaVald();
-            }
-            
-        }
-
-        private void addKursmomentButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void removeKursmomentButton_Click(object sender, EventArgs e)
-        {            
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
-                $"{kursmomentLista[kursmomentListBox.SelectedIndex].HämtaNamn()} från kursen " +
-                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
-
-            if (resultat == DialogResult.Yes)
-            {
-                kursmomentLista.RemoveAt(kursmomentListBox.SelectedIndex);
-                UppdateraKursmomentListBox();
-                kursmomentListBox.SelectedIndex = -1;
-                KollaVald();
-            }
-            
-        }
-
-        private void addStudentButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void removeStudentButton_Click(object sender, EventArgs e)
-        {
-            DialogResult resultat = MessageBox.Show($"Vill du verkligen ta bort " +
-                $"{studentLista[studentListBox.SelectedIndex].HämtaNamn()} från kursen " +
-                $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
-            if (resultat == DialogResult.Yes)
-            {
-                studentLista.RemoveAt(studentListBox.SelectedIndex);
-                UppdateraStudentListBox();
-                studentListBox.SelectedItem = -1;
-                KollaVald();
-            }            
-
-        }
-
     }
 }

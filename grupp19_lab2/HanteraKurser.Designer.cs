@@ -43,6 +43,8 @@ namespace grupp19_lab2
             this.addKursButton = new System.Windows.Forms.Button();
             this.removeStudentButton = new System.Windows.Forms.Button();
             this.addStudentButton = new System.Windows.Forms.Button();
+            this.addLärarlagButton = new System.Windows.Forms.Button();
+            this.removeLärarlagButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // kurserListBox
@@ -178,11 +180,33 @@ namespace grupp19_lab2
             this.addStudentButton.UseVisualStyleBackColor = true;
             this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
+            // addLärarlagButton
+            // 
+            this.addLärarlagButton.Location = new System.Drawing.Point(312, 55);
+            this.addLärarlagButton.Name = "addLärarlagButton";
+            this.addLärarlagButton.Size = new System.Drawing.Size(46, 29);
+            this.addLärarlagButton.TabIndex = 14;
+            this.addLärarlagButton.Text = "+";
+            this.addLärarlagButton.UseVisualStyleBackColor = true;
+            this.addLärarlagButton.Click += new System.EventHandler(this.addLärarlagButton_Click);
+            // 
+            // removeLärarlagButton
+            // 
+            this.removeLärarlagButton.Location = new System.Drawing.Point(364, 55);
+            this.removeLärarlagButton.Name = "removeLärarlagButton";
+            this.removeLärarlagButton.Size = new System.Drawing.Size(46, 29);
+            this.removeLärarlagButton.TabIndex = 15;
+            this.removeLärarlagButton.Text = "-";
+            this.removeLärarlagButton.UseVisualStyleBackColor = true;
+            this.removeLärarlagButton.Click += new System.EventHandler(this.removeLärarlagButton_Click);
+            // 
             // HanteraKurser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 826);
+            this.Controls.Add(this.removeLärarlagButton);
+            this.Controls.Add(this.addLärarlagButton);
             this.Controls.Add(this.removeStudentButton);
             this.Controls.Add(this.addStudentButton);
             this.Controls.Add(this.removeKursButton);
@@ -223,5 +247,7 @@ namespace grupp19_lab2
         private System.Windows.Forms.Button addKursButton;
         private System.Windows.Forms.Button removeStudentButton;
         private System.Windows.Forms.Button addStudentButton;
+        private System.Windows.Forms.Button addLärarlagButton;
+        private System.Windows.Forms.Button removeLärarlagButton;
     }
 }
