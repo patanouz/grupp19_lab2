@@ -113,6 +113,7 @@ namespace grupp19_lab2
                 studentLista.Clear();
                 studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
                 UppdateraStudentListBox();
+                MessageBox.Show("Studenten är sparad!");
             }
             // Normalt sett hade vi inte behövt loopa genom det, men eftersom det går att söka behövs den.
             foreach (Student item in studentLista)
@@ -136,30 +137,36 @@ namespace grupp19_lab2
 
         private void TaBortStudentButton_Click(object sender, EventArgs e)
         {
-            if (studentListBox.SelectedIndex < 0)
+            DialogResult answer; ;
+            answer = MessageBox.Show("Vill du ta verkligen ta bort "+studentLista[studentListBox.SelectedIndex].Förnamn+" "+studentLista[studentListBox.SelectedIndex].efternamn+"?","Ta bort?", MessageBoxButtons.YesNo);
+            if (answer == DialogResult.Yes)
             {
-                return;
-            }
-            if (studentLista.Count <= 0) { return; }
-            if (söktaStudenter.Count<studentListBox.Items.Count)
-            {                
-                form1.Databasanslutning().TaBortStudent(studentLista[studentListBox.SelectedIndex]);
+                if (studentListBox.SelectedIndex < 0)
+                {
+                    return;
+                }
+                if (studentLista.Count <= 0) { return; }
+                if (söktaStudenter.Count < studentListBox.Items.Count)
+                {
+                    form1.Databasanslutning().TaBortStudent(studentLista[studentListBox.SelectedIndex]);
+                    studentLista.Clear();
+                    studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
+                    UppdateraStudentListBox();
+                    PersonnummerTextBox.Text = "";
+                    FörnamnTextBox.Text = "";
+                    EfternamnTextBox.Text = "";
+                    TelefonnummerTextBox.Text = "";
+                    EpostTextBox.Text = "";
+                    return;
+                }
+                form1.Databasanslutning().TaBortStudent((söktaStudenter[studentListBox.SelectedIndex]));
                 studentLista.Clear();
                 studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
-                UppdateraStudentListBox();
-                PersonnummerTextBox.Text = "";
-                FörnamnTextBox.Text = "";
-                EfternamnTextBox.Text = "";
-                TelefonnummerTextBox.Text = "";
-                EpostTextBox.Text = "";
-                return;
-            }
-            form1.Databasanslutning().TaBortStudent((söktaStudenter[studentListBox.SelectedIndex]));
-            studentLista.Clear();
-            studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
 
-            //TODO: Ska läggas till en messagebox som frågar om man verkligen vill...
-            UppdateraStudentListBox();
+                //TODO: Ska läggas till en messagebox som frågar om man verkligen vill...
+                UppdateraStudentListBox();
+            }
+
         }
 
         private void SearchButton_Click(object sender, EventArgs e) //Sökfunktion för studenter som även ger felmeddelande när ingen sökt gubbe finns.
