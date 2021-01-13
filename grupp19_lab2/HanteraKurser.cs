@@ -250,7 +250,7 @@ namespace grupp19_lab2
         {
             if (kursLista[kurserListBox.SelectedIndex].HämtaLärarlag() == null)
             {
-                aktuelltLärarlagLabel.Text = "Lärarlag saknas";
+                aktuelltLärarlagLabel.Text = "Saknas";
 
             }
             else
