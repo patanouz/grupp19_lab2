@@ -18,6 +18,8 @@ namespace grupp19_lab2
         List<Kursmoment> kursmomentLista = new List<Kursmoment>();
         List<Student> studentLista = new List<Student>();
         List<Student> allaStudenter = new List<Student>();
+        List<Student> temporäraStudenter = new List<Student>();
+        List<Student> comboBoxStudenter = new List<Student>();
         
         Form1 form1;
         public HanteraKurser(Form1 form1)
@@ -56,13 +58,34 @@ namespace grupp19_lab2
         private void UppdateraStudentListBox()
         {
             studentListBox.Items.Clear();
-            allaStudenter = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
+            studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
             foreach (Student s in studentLista)
             {
                 studentListBox.Items.Add(s.HämtaNamn());
             }
         }
 
+        private void UppdateraStudentComboBox()
+        {
+            if (kurserListBox.SelectedIndex != -1)
+            {
+                addStudentComboBox.Items.Clear();
+                allaStudenter.Clear();
+                temporäraStudenter.Clear();
+                allaStudenter.AddRange(form1.Databasanslutning().HämtaStudenter());
+                temporäraStudenter.AddRange(kursLista[kurserListBox.SelectedIndex].HämtaStudenter());
+                foreach (Student s in allaStudenter)
+                {
+                    if (!kursLista[kurserListBox.SelectedIndex].HämtaStudenter().Contains(s))
+                    {
+                        addStudentComboBox.Items.Add(s);
+                        comboBoxStudenter.Add(s);
+                    }
+                }
+            }
+            
+        }
+        
         private void kurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             studentListBox.SelectedIndex = -1;
@@ -86,6 +109,7 @@ namespace grupp19_lab2
                 }
 
                 KollaLärarlag();
+                UppdateraStudentComboBox();
                 
             }                   
             
@@ -166,14 +190,14 @@ namespace grupp19_lab2
 
         private void addLärarlagButton_Click(object sender, EventArgs e)
         {
-           // Lägg till lärarlag.
+           // Denna används ej!
 
         }
 
         private void removeLärarlagButton_Click(object sender, EventArgs e)
         {
             
-            // Ta bort lärarlag.
+            // Denna används ej!
 
         }
 
@@ -215,6 +239,14 @@ namespace grupp19_lab2
                 addKursmomentButton.Enabled = true;
                 removeStudentButton.Enabled = true;
             }
+            if (addStudentComboBox.SelectedIndex == -1)
+            {
+                addStudentButton.Enabled = false;
+            }
+            else
+            {
+                addStudentButton.Enabled = true;
+            }
         }
 
         private void KollaLärarlag()
@@ -245,7 +277,15 @@ namespace grupp19_lab2
 
         private void addStudentButton_Click_1(object sender, EventArgs e)
         {
-                        
+                kursLista[kurserListBox.SelectedIndex].LäggTillStudent(comboBoxStudenter[addStudentComboBox.SelectedIndex]);
+                UppdateraStudentListBox();
+                UppdateraStudentComboBox();
+        
+        }
+
+        private void addStudentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KollaVald();
         }
     }
 }

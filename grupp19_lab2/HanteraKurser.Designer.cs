@@ -42,8 +42,8 @@ namespace grupp19_lab2
             this.aktuelltLärarlagLabel = new System.Windows.Forms.Label();
             this.addKursmomentTextBox = new System.Windows.Forms.TextBox();
             this.kursmomentGroupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.addKursmomentButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.addStudentComboBox = new System.Windows.Forms.ComboBox();
             this.addStudentButton = new System.Windows.Forms.Button();
             this.studentGroupBox = new System.Windows.Forms.GroupBox();
@@ -174,15 +174,6 @@ namespace grupp19_lab2
             this.kursmomentGroupBox.TabStop = false;
             this.kursmomentGroupBox.Text = "Kursmoment";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Kursmoment";
-            // 
             // addKursmomentButton
             // 
             this.addKursmomentButton.Location = new System.Drawing.Point(65, 106);
@@ -193,6 +184,15 @@ namespace grupp19_lab2
             this.addKursmomentButton.UseVisualStyleBackColor = true;
             this.addKursmomentButton.Click += new System.EventHandler(this.addKursmomentButton_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Kursmoment";
+            // 
             // addStudentComboBox
             // 
             this.addStudentComboBox.FormattingEnabled = true;
@@ -200,6 +200,7 @@ namespace grupp19_lab2
             this.addStudentComboBox.Name = "addStudentComboBox";
             this.addStudentComboBox.Size = new System.Drawing.Size(212, 28);
             this.addStudentComboBox.TabIndex = 17;
+            this.addStudentComboBox.SelectedIndexChanged += new System.EventHandler(this.addStudentComboBox_SelectedIndexChanged);
             // 
             // addStudentButton
             // 
