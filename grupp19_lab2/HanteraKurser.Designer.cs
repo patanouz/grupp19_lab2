@@ -60,7 +60,7 @@ namespace grupp19_lab2
             this.kurserListBox.Location = new System.Drawing.Point(45, 186);
             this.kurserListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kurserListBox.Name = "kurserListBox";
-            this.kurserListBox.Size = new System.Drawing.Size(693, 144);
+            this.kurserListBox.Size = new System.Drawing.Size(693, 192);
             this.kurserListBox.TabIndex = 0;
             this.kurserListBox.SelectedIndexChanged += new System.EventHandler(this.kurserListBox_SelectedIndexChanged);
             // 
@@ -72,7 +72,7 @@ namespace grupp19_lab2
             this.kursmomentListBox.Location = new System.Drawing.Point(48, 450);
             this.kursmomentListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kursmomentListBox.Name = "kursmomentListBox";
-            this.kursmomentListBox.Size = new System.Drawing.Size(693, 144);
+            this.kursmomentListBox.Size = new System.Drawing.Size(693, 192);
             this.kursmomentListBox.TabIndex = 1;
             this.kursmomentListBox.SelectedIndexChanged += new System.EventHandler(this.kursmomentListBox_SelectedIndexChanged);
             // 
@@ -84,14 +84,14 @@ namespace grupp19_lab2
             this.studentListBox.Location = new System.Drawing.Point(47, 704);
             this.studentListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.studentListBox.Name = "studentListBox";
-            this.studentListBox.Size = new System.Drawing.Size(693, 144);
+            this.studentListBox.Size = new System.Drawing.Size(693, 192);
             this.studentListBox.TabIndex = 2;
             this.studentListBox.SelectedIndexChanged += new System.EventHandler(this.studentListBox_SelectedIndexChanged);
             // 
             // kurserLabel
             // 
             this.kurserLabel.AutoSize = true;
-            this.kurserLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kurserLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kurserLabel.Location = new System.Drawing.Point(39, 151);
             this.kurserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kurserLabel.Name = "kurserLabel";
@@ -102,7 +102,7 @@ namespace grupp19_lab2
             // kursmomentLabel
             // 
             this.kursmomentLabel.AutoSize = true;
-            this.kursmomentLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kursmomentLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kursmomentLabel.Location = new System.Drawing.Point(43, 412);
             this.kursmomentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kursmomentLabel.Name = "kursmomentLabel";
@@ -113,7 +113,7 @@ namespace grupp19_lab2
             // studentLabel
             // 
             this.studentLabel.AutoSize = true;
-            this.studentLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentLabel.Location = new System.Drawing.Point(43, 664);
             this.studentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.studentLabel.Name = "studentLabel";
@@ -125,7 +125,7 @@ namespace grupp19_lab2
             // 
             this.lärarlagLabel.AutoSize = true;
             this.lärarlagLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lärarlagLabel.Location = new System.Drawing.Point(1059, 186);
+            this.lärarlagLabel.Location = new System.Drawing.Point(1045, 186);
             this.lärarlagLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lärarlagLabel.Name = "lärarlagLabel";
             this.lärarlagLabel.Size = new System.Drawing.Size(121, 38);
@@ -153,7 +153,7 @@ namespace grupp19_lab2
             this.removeKursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeKursButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeKursButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeKursButton.Location = new System.Drawing.Point(747, 186);
+            this.removeKursButton.Location = new System.Drawing.Point(746, 186);
             this.removeKursButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeKursButton.Name = "removeKursButton";
             this.removeKursButton.Size = new System.Drawing.Size(129, 52);
@@ -168,7 +168,7 @@ namespace grupp19_lab2
             this.removeStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeStudentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeStudentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeStudentButton.Location = new System.Drawing.Point(748, 704);
+            this.removeStudentButton.Location = new System.Drawing.Point(746, 706);
             this.removeStudentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeStudentButton.Name = "removeStudentButton";
             this.removeStudentButton.Size = new System.Drawing.Size(129, 52);
@@ -180,7 +180,7 @@ namespace grupp19_lab2
             // aktuelltLärarlagLabel
             // 
             this.aktuelltLärarlagLabel.AutoSize = true;
-            this.aktuelltLärarlagLabel.Location = new System.Drawing.Point(1062, 243);
+            this.aktuelltLärarlagLabel.Location = new System.Drawing.Point(1049, 233);
             this.aktuelltLärarlagLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aktuelltLärarlagLabel.Name = "aktuelltLärarlagLabel";
             this.aktuelltLärarlagLabel.Size = new System.Drawing.Size(154, 25);
@@ -192,7 +192,7 @@ namespace grupp19_lab2
             this.addKursmomentTextBox.Location = new System.Drawing.Point(14, 99);
             this.addKursmomentTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addKursmomentTextBox.Name = "addKursmomentTextBox";
-            this.addKursmomentTextBox.Size = new System.Drawing.Size(258, 45);
+            this.addKursmomentTextBox.Size = new System.Drawing.Size(305, 45);
             this.addKursmomentTextBox.TabIndex = 15;
             // 
             // kursmomentGroupBox
@@ -205,7 +205,7 @@ namespace grupp19_lab2
             this.kursmomentGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kursmomentGroupBox.Name = "kursmomentGroupBox";
             this.kursmomentGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.kursmomentGroupBox.Size = new System.Drawing.Size(282, 266);
+            this.kursmomentGroupBox.Size = new System.Drawing.Size(327, 266);
             this.kursmomentGroupBox.TabIndex = 16;
             this.kursmomentGroupBox.TabStop = false;
             this.kursmomentGroupBox.Text = "Kursmoment";
@@ -216,7 +216,7 @@ namespace grupp19_lab2
             this.addKursmomentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addKursmomentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addKursmomentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addKursmomentButton.Location = new System.Drawing.Point(78, 174);
+            this.addKursmomentButton.Location = new System.Drawing.Point(15, 159);
             this.addKursmomentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addKursmomentButton.Name = "addKursmomentButton";
             this.addKursmomentButton.Size = new System.Drawing.Size(136, 70);
@@ -228,11 +228,11 @@ namespace grupp19_lab2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 69);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 64);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 25);
+            this.label1.Size = new System.Drawing.Size(169, 32);
             this.label1.TabIndex = 17;
             this.label1.Text = "Ange moment";
             // 
@@ -242,7 +242,7 @@ namespace grupp19_lab2
             this.addStudentComboBox.Location = new System.Drawing.Point(14, 64);
             this.addStudentComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addStudentComboBox.Name = "addStudentComboBox";
-            this.addStudentComboBox.Size = new System.Drawing.Size(258, 46);
+            this.addStudentComboBox.Size = new System.Drawing.Size(305, 46);
             this.addStudentComboBox.TabIndex = 17;
             this.addStudentComboBox.SelectedIndexChanged += new System.EventHandler(this.addStudentComboBox_SelectedIndexChanged);
             // 
@@ -252,7 +252,7 @@ namespace grupp19_lab2
             this.addStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStudentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addStudentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addStudentButton.Location = new System.Drawing.Point(78, 132);
+            this.addStudentButton.Location = new System.Drawing.Point(14, 124);
             this.addStudentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addStudentButton.Name = "addStudentButton";
             this.addStudentButton.Size = new System.Drawing.Size(136, 69);
@@ -270,7 +270,7 @@ namespace grupp19_lab2
             this.studentGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.studentGroupBox.Name = "studentGroupBox";
             this.studentGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.studentGroupBox.Size = new System.Drawing.Size(282, 219);
+            this.studentGroupBox.Size = new System.Drawing.Size(327, 219);
             this.studentGroupBox.TabIndex = 19;
             this.studentGroupBox.TabStop = false;
             this.studentGroupBox.Text = "Studenter";
@@ -306,7 +306,7 @@ namespace grupp19_lab2
             this.Controls.Add(this.kursmomentGroupBox);
             this.Controls.Add(this.studentGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "HanteraKurser";
             this.Text = "HanteraKurser";
             this.Load += new System.EventHandler(this.HanteraKurser_Load);
