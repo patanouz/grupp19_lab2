@@ -17,6 +17,7 @@ namespace grupp19_lab2
         List<Kurs> kursLista = new List<Kurs>();
         List<Kursmoment> kursmomentLista = new List<Kursmoment>();
         List<Student> studentLista = new List<Student>();
+        List<Student> allaStudenter = new List<Student>();
         
         Form1 form1;
         public HanteraKurser(Form1 form1)
@@ -55,7 +56,7 @@ namespace grupp19_lab2
         private void UppdateraStudentListBox()
         {
             studentListBox.Items.Clear();
-            studentLista = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
+            allaStudenter = kursLista[kurserListBox.SelectedIndex].HämtaStudenter();
             foreach (Student s in studentLista)
             {
                 studentListBox.Items.Add(s.HämtaNamn());
@@ -85,7 +86,7 @@ namespace grupp19_lab2
                 }
 
                 KollaLärarlag();
-
+                
             }                   
             
         }
@@ -93,7 +94,6 @@ namespace grupp19_lab2
         private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             KollaVald();
-
         }
 
         private void studentListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,7 +146,7 @@ namespace grupp19_lab2
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
-            // Lägg till fler studenter
+            // Denna används ej!
         }
 
         private void removeStudentButton_Click(object sender, EventArgs e)
@@ -181,20 +181,20 @@ namespace grupp19_lab2
         {
             if (kurserListBox.SelectedIndex == -1)
             {
-                addKursButton.Enabled = true;
+
                 removeKursButton.Enabled = false;
-                addStudentButton.Enabled = false;
                 addKursmomentButton.Enabled = false;
-                addLärarlagButton.Enabled = false;
-                removeLärarlagButton.Enabled = false;
+                addKursmomentButton.Enabled = false;
+                addStudentButton.Enabled = false;
 
             }
             else
             {
-                addKursButton.Enabled = true;
+
                 removeKursButton.Enabled = true;
-                addStudentButton.Enabled = true;
                 addKursmomentButton.Enabled = true;
+                addKursmomentButton.Enabled = true;
+                addStudentButton.Enabled = true;
 
             }
             if (kursmomentListBox.SelectedIndex == -1)
@@ -212,7 +212,7 @@ namespace grupp19_lab2
             }
             else
             {
-                addStudentButton.Enabled = true;
+                addKursmomentButton.Enabled = true;
                 removeStudentButton.Enabled = true;
             }
         }
@@ -221,16 +221,31 @@ namespace grupp19_lab2
         {
             if (kursLista[kurserListBox.SelectedIndex].HämtaLärarlag() == null)
             {
-                lärarlagTextBox.Text = "Lärarlag saknas";
-                addLärarlagButton.Enabled = true;
-                removeLärarlagButton.Enabled = false;
+                aktuelltLärarlagLabel.Text = "Lärarlag saknas";
+
             }
             else
             {
-                lärarlagTextBox.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
-                addLärarlagButton.Enabled = true;
-                removeLärarlagButton.Enabled = true;
+                aktuelltLärarlagLabel.Text = kursLista[kurserListBox.SelectedIndex].HämtaLärarlag().lagNamn;
+
             }
+        }
+
+        private void addKursmomentButton_Click_1(object sender, EventArgs e)
+        {
+            if (addKursmomentTextBox.Text == null)
+            {
+                MessageBox.Show("Kursmoment saknar namn.", "Varning");
+            }
+
+            Kursmoment km = new Kursmoment(addKursmomentTextBox.Text, kursLista[kurserListBox.SelectedIndex]);
+            UppdateraKursmomentListBox();
+            addKursmomentTextBox.Clear();
+        }
+
+        private void addStudentButton_Click_1(object sender, EventArgs e)
+        {
+                        
         }
     }
 }

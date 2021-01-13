@@ -36,15 +36,18 @@ namespace grupp19_lab2
             this.kursmomentLabel = new System.Windows.Forms.Label();
             this.studentLabel = new System.Windows.Forms.Label();
             this.lärarlagLabel = new System.Windows.Forms.Label();
-            this.lärarlagTextBox = new System.Windows.Forms.TextBox();
-            this.addKursmomentButton = new System.Windows.Forms.Button();
             this.removeKursmomentButton = new System.Windows.Forms.Button();
             this.removeKursButton = new System.Windows.Forms.Button();
-            this.addKursButton = new System.Windows.Forms.Button();
             this.removeStudentButton = new System.Windows.Forms.Button();
+            this.aktuelltLärarlagLabel = new System.Windows.Forms.Label();
+            this.addKursmomentTextBox = new System.Windows.Forms.TextBox();
+            this.kursmomentGroupBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.addKursmomentButton = new System.Windows.Forms.Button();
+            this.addStudentComboBox = new System.Windows.Forms.ComboBox();
             this.addStudentButton = new System.Windows.Forms.Button();
-            this.addLärarlagButton = new System.Windows.Forms.Button();
-            this.removeLärarlagButton = new System.Windows.Forms.Button();
+            this.studentGroupBox = new System.Windows.Forms.GroupBox();
+            this.kursmomentGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // kurserListBox
@@ -113,26 +116,9 @@ namespace grupp19_lab2
             this.lärarlagLabel.TabIndex = 6;
             this.lärarlagLabel.Text = "Lärarlag";
             // 
-            // lärarlagTextBox
-            // 
-            this.lärarlagTextBox.Location = new System.Drawing.Point(59, 56);
-            this.lärarlagTextBox.Name = "lärarlagTextBox";
-            this.lärarlagTextBox.Size = new System.Drawing.Size(247, 26);
-            this.lärarlagTextBox.TabIndex = 7;
-            // 
-            // addKursmomentButton
-            // 
-            this.addKursmomentButton.Location = new System.Drawing.Point(385, 529);
-            this.addKursmomentButton.Name = "addKursmomentButton";
-            this.addKursmomentButton.Size = new System.Drawing.Size(71, 44);
-            this.addKursmomentButton.TabIndex = 8;
-            this.addKursmomentButton.Text = "+";
-            this.addKursmomentButton.UseVisualStyleBackColor = true;
-            this.addKursmomentButton.Click += new System.EventHandler(this.addKursmomentButton_Click);
-            // 
             // removeKursmomentButton
             // 
-            this.removeKursmomentButton.Location = new System.Drawing.Point(482, 529);
+            this.removeKursmomentButton.Location = new System.Drawing.Point(437, 530);
             this.removeKursmomentButton.Name = "removeKursmomentButton";
             this.removeKursmomentButton.Size = new System.Drawing.Size(71, 44);
             this.removeKursmomentButton.TabIndex = 9;
@@ -142,7 +128,7 @@ namespace grupp19_lab2
             // 
             // removeKursButton
             // 
-            this.removeKursButton.Location = new System.Drawing.Point(184, 529);
+            this.removeKursButton.Location = new System.Drawing.Point(143, 529);
             this.removeKursButton.Name = "removeKursButton";
             this.removeKursButton.Size = new System.Drawing.Size(71, 44);
             this.removeKursButton.TabIndex = 11;
@@ -150,19 +136,9 @@ namespace grupp19_lab2
             this.removeKursButton.UseVisualStyleBackColor = true;
             this.removeKursButton.Click += new System.EventHandler(this.removeKursButton_Click);
             // 
-            // addKursButton
-            // 
-            this.addKursButton.Location = new System.Drawing.Point(87, 529);
-            this.addKursButton.Name = "addKursButton";
-            this.addKursButton.Size = new System.Drawing.Size(71, 44);
-            this.addKursButton.TabIndex = 10;
-            this.addKursButton.Text = "+";
-            this.addKursButton.UseVisualStyleBackColor = true;
-            this.addKursButton.Click += new System.EventHandler(this.addKursButton_Click);
-            // 
             // removeStudentButton
             // 
-            this.removeStudentButton.Location = new System.Drawing.Point(776, 530);
+            this.removeStudentButton.Location = new System.Drawing.Point(737, 530);
             this.removeStudentButton.Name = "removeStudentButton";
             this.removeStudentButton.Size = new System.Drawing.Size(71, 44);
             this.removeStudentButton.TabIndex = 13;
@@ -170,50 +146,91 @@ namespace grupp19_lab2
             this.removeStudentButton.UseVisualStyleBackColor = true;
             this.removeStudentButton.Click += new System.EventHandler(this.removeStudentButton_Click);
             // 
+            // aktuelltLärarlagLabel
+            // 
+            this.aktuelltLärarlagLabel.AutoSize = true;
+            this.aktuelltLärarlagLabel.Location = new System.Drawing.Point(57, 61);
+            this.aktuelltLärarlagLabel.Name = "aktuelltLärarlagLabel";
+            this.aktuelltLärarlagLabel.Size = new System.Drawing.Size(123, 20);
+            this.aktuelltLärarlagLabel.TabIndex = 14;
+            this.aktuelltLärarlagLabel.Text = "Kursens lärarlag";
+            // 
+            // addKursmomentTextBox
+            // 
+            this.addKursmomentTextBox.Location = new System.Drawing.Point(22, 62);
+            this.addKursmomentTextBox.Name = "addKursmomentTextBox";
+            this.addKursmomentTextBox.Size = new System.Drawing.Size(206, 26);
+            this.addKursmomentTextBox.TabIndex = 15;
+            // 
+            // kursmomentGroupBox
+            // 
+            this.kursmomentGroupBox.Controls.Add(this.addKursmomentButton);
+            this.kursmomentGroupBox.Controls.Add(this.label1);
+            this.kursmomentGroupBox.Controls.Add(this.addKursmomentTextBox);
+            this.kursmomentGroupBox.Location = new System.Drawing.Point(357, 591);
+            this.kursmomentGroupBox.Name = "kursmomentGroupBox";
+            this.kursmomentGroupBox.Size = new System.Drawing.Size(247, 183);
+            this.kursmomentGroupBox.TabIndex = 16;
+            this.kursmomentGroupBox.TabStop = false;
+            this.kursmomentGroupBox.Text = "Kursmoment";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Kursmoment";
+            // 
+            // addKursmomentButton
+            // 
+            this.addKursmomentButton.Location = new System.Drawing.Point(65, 106);
+            this.addKursmomentButton.Name = "addKursmomentButton";
+            this.addKursmomentButton.Size = new System.Drawing.Size(111, 59);
+            this.addKursmomentButton.TabIndex = 17;
+            this.addKursmomentButton.Text = "Lägg till kursmoment";
+            this.addKursmomentButton.UseVisualStyleBackColor = true;
+            this.addKursmomentButton.Click += new System.EventHandler(this.addKursmomentButton_Click_1);
+            // 
+            // addStudentComboBox
+            // 
+            this.addStudentComboBox.FormattingEnabled = true;
+            this.addStudentComboBox.Location = new System.Drawing.Point(651, 652);
+            this.addStudentComboBox.Name = "addStudentComboBox";
+            this.addStudentComboBox.Size = new System.Drawing.Size(212, 28);
+            this.addStudentComboBox.TabIndex = 17;
+            // 
             // addStudentButton
             // 
-            this.addStudentButton.Location = new System.Drawing.Point(679, 529);
+            this.addStudentButton.Location = new System.Drawing.Point(694, 694);
             this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(71, 44);
-            this.addStudentButton.TabIndex = 12;
-            this.addStudentButton.Text = "+";
+            this.addStudentButton.Size = new System.Drawing.Size(123, 58);
+            this.addStudentButton.TabIndex = 18;
+            this.addStudentButton.Text = "Lägg till student";
             this.addStudentButton.UseVisualStyleBackColor = true;
-            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click_1);
             // 
-            // addLärarlagButton
+            // studentGroupBox
             // 
-            this.addLärarlagButton.Location = new System.Drawing.Point(312, 55);
-            this.addLärarlagButton.Name = "addLärarlagButton";
-            this.addLärarlagButton.Size = new System.Drawing.Size(46, 29);
-            this.addLärarlagButton.TabIndex = 14;
-            this.addLärarlagButton.Text = "+";
-            this.addLärarlagButton.UseVisualStyleBackColor = true;
-            this.addLärarlagButton.Click += new System.EventHandler(this.addLärarlagButton_Click);
-            // 
-            // removeLärarlagButton
-            // 
-            this.removeLärarlagButton.Location = new System.Drawing.Point(364, 55);
-            this.removeLärarlagButton.Name = "removeLärarlagButton";
-            this.removeLärarlagButton.Size = new System.Drawing.Size(46, 29);
-            this.removeLärarlagButton.TabIndex = 15;
-            this.removeLärarlagButton.Text = "-";
-            this.removeLärarlagButton.UseVisualStyleBackColor = true;
-            this.removeLärarlagButton.Click += new System.EventHandler(this.removeLärarlagButton_Click);
+            this.studentGroupBox.Location = new System.Drawing.Point(647, 591);
+            this.studentGroupBox.Name = "studentGroupBox";
+            this.studentGroupBox.Size = new System.Drawing.Size(231, 183);
+            this.studentGroupBox.TabIndex = 19;
+            this.studentGroupBox.TabStop = false;
+            this.studentGroupBox.Text = "Studenter";
             // 
             // HanteraKurser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 826);
-            this.Controls.Add(this.removeLärarlagButton);
-            this.Controls.Add(this.addLärarlagButton);
-            this.Controls.Add(this.removeStudentButton);
             this.Controls.Add(this.addStudentButton);
+            this.Controls.Add(this.addStudentComboBox);
+            this.Controls.Add(this.aktuelltLärarlagLabel);
+            this.Controls.Add(this.removeStudentButton);
             this.Controls.Add(this.removeKursButton);
-            this.Controls.Add(this.addKursButton);
             this.Controls.Add(this.removeKursmomentButton);
-            this.Controls.Add(this.addKursmomentButton);
-            this.Controls.Add(this.lärarlagTextBox);
             this.Controls.Add(this.lärarlagLabel);
             this.Controls.Add(this.studentLabel);
             this.Controls.Add(this.kursmomentLabel);
@@ -221,11 +238,15 @@ namespace grupp19_lab2
             this.Controls.Add(this.studentListBox);
             this.Controls.Add(this.kursmomentListBox);
             this.Controls.Add(this.kurserListBox);
+            this.Controls.Add(this.kursmomentGroupBox);
+            this.Controls.Add(this.studentGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "HanteraKurser";
             this.Text = "HanteraKurser";
             this.Load += new System.EventHandler(this.HanteraKurser_Load);
+            this.kursmomentGroupBox.ResumeLayout(false);
+            this.kursmomentGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,14 +261,16 @@ namespace grupp19_lab2
         private System.Windows.Forms.Label kursmomentLabel;
         private System.Windows.Forms.Label studentLabel;
         private System.Windows.Forms.Label lärarlagLabel;
-        private System.Windows.Forms.TextBox lärarlagTextBox;
-        private System.Windows.Forms.Button addKursmomentButton;
         private System.Windows.Forms.Button removeKursmomentButton;
         private System.Windows.Forms.Button removeKursButton;
-        private System.Windows.Forms.Button addKursButton;
         private System.Windows.Forms.Button removeStudentButton;
+        private System.Windows.Forms.Label aktuelltLärarlagLabel;
+        private System.Windows.Forms.TextBox addKursmomentTextBox;
+        private System.Windows.Forms.GroupBox kursmomentGroupBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button addKursmomentButton;
+        private System.Windows.Forms.ComboBox addStudentComboBox;
         private System.Windows.Forms.Button addStudentButton;
-        private System.Windows.Forms.Button addLärarlagButton;
-        private System.Windows.Forms.Button removeLärarlagButton;
+        private System.Windows.Forms.GroupBox studentGroupBox;
     }
 }
