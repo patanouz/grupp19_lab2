@@ -35,7 +35,7 @@ namespace grupp19_lab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 498);
+            this.ClientSize = new System.Drawing.Size(784, 537);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HanteraLärarlag";
             this.Text = "HanteraLärarlag";
