@@ -75,6 +75,12 @@
     <Compile Include="HanteraKurser.Designer.cs">
       <DependentUpon>HanteraKurser.cs</DependentUpon>
     </Compile>
+    <Compile Include="HanteraLärarlag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HanteraLärarlag.Designer.cs">
+      <DependentUpon>HanteraLärarlag.cs</DependentUpon>
+    </Compile>
     <Compile Include="IBetygsunderlag.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HanteraKurser.resx">
       <DependentUpon>HanteraKurser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HanteraLärarlag.resx">
+      <DependentUpon>HanteraLärarlag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hjälp.resx">
       <DependentUpon>Hjälp.cs</DependentUpon>

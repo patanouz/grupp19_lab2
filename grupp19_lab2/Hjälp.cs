@@ -16,7 +16,7 @@ namespace grupp19_lab2
         Form1 form1;
         List<Kurs> kurser;
 
-        private SqliteDatabaseConnection databas;
+        private IDatabaseConnection databas;
 
         IReadOnlyDictionary<IBetygsunderlag, string> Test;
         public Hjälp(Form1 form1)
@@ -33,7 +33,7 @@ namespace grupp19_lab2
 
 
             //Test databas
-            databas = new SqliteDatabaseConnection();
+            databas = form1.Databasanslutning();
             kurser = new List<Kurs>(databas.HämtaKurser());
             
 
@@ -54,7 +54,12 @@ namespace grupp19_lab2
         {
             
         }
-            
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(databas.HämtaStudenter());
         }
+    }
     }
 

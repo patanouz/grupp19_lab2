@@ -12,28 +12,24 @@ namespace grupp19_lab2
 {
     public partial class Form1 : Form
     {
-
         Studenter studenter;
         Kurser kurser;
         Lärare lärare;
         Betyg betyg;
         Hjälp hjälp;
         HanteraKurser hanteraKurser;
+        HanteraLärarlag hanteraLärarlag;
 
         Form[] allaSidor;
 
         Point startPoint = new Point(0, 0);
 
-
         private IDatabaseConnection databas;
-
 
 
         public Form1()
         {
-
             databas = new SqliteDatabaseConnection();
-
 
             InitializeComponent();
             studenter = new Studenter(this);
@@ -42,16 +38,16 @@ namespace grupp19_lab2
             betyg = new Betyg(this);
             hjälp = new Hjälp(this);
             hanteraKurser = new HanteraKurser(this);
+            hanteraLärarlag = new HanteraLärarlag(this);
 
-
-            allaSidor = new Form[6];
+            allaSidor = new Form[7];
             allaSidor[0] = studenter;
             allaSidor[1] = kurser;
             allaSidor[2] = lärare;  
             allaSidor[3] = betyg;
             allaSidor[4] = hjälp;
             allaSidor[5] = hanteraKurser;
-
+            allaSidor[6] = hanteraLärarlag;
 
             foreach (Form f in allaSidor)
             {
@@ -60,12 +56,6 @@ namespace grupp19_lab2
 
             resetVisiblity();
             studenter.Show();
-
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -95,8 +85,8 @@ namespace grupp19_lab2
             {
                 f.Hide();
                 f.Location = startPoint;
-
             }
+
         }
 
         private void studenterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,19 +97,6 @@ namespace grupp19_lab2
 
         }
 
-        private void kurserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void lärareToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            resetVisiblity();
-            lärare.Show();
-            lärare.Location = startPoint;
-
-        }
 
         private void betygToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -136,8 +113,6 @@ namespace grupp19_lab2
             hjälp.Location = startPoint;
 
         }
-
-       
     
 
         private void nyKursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +120,7 @@ namespace grupp19_lab2
             resetVisiblity();
             kurser.Show();
             kurser.Location = startPoint;
+
         }
 
         private void hanteraKurserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,6 +128,7 @@ namespace grupp19_lab2
             resetVisiblity();
             hanteraKurser.Show();
             hanteraKurser.Location = startPoint;
+
         }
 
         private void kurserToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -169,6 +146,40 @@ namespace grupp19_lab2
         public IDatabaseConnection Databasanslutning()
         {
             return databas;
+
+        }
+
+        private void hanteraLärareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetVisiblity();
+            lärare.Show();
+            lärare.Location = startPoint;
+
+        }
+
+        private void hanteraLärarlagToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetVisiblity();
+            hanteraLärarlag.Show();
+            hanteraLärarlag.Location = startPoint;
+
+        }
+
+        private void lärareToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is ToolStripDropDownItem)
+            {
+                ToolStripDropDownItem item = sender as ToolStripDropDownItem;
+                if (item.HasDropDownItems && !item.DropDown.Visible)
+                {
+                    item.ShowDropDown();
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

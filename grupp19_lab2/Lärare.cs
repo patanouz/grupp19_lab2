@@ -170,5 +170,10 @@ namespace grupp19_lab2
             }
             clearTextBoxesAndButtons();
         }
+
+        private void Lärare_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
