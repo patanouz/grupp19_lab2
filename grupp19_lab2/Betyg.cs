@@ -59,6 +59,9 @@ namespace grupp19_lab2
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
