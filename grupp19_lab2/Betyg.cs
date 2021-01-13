@@ -20,9 +20,23 @@ namespace grupp19_lab2
 
             this.form1 = form1;
             InitializeComponent();
+            List<string> betyg = new List<string>(2);
+            betyg.Add("-");
+            betyg.Add("G");
+            betyg.Add("VG");
+
             databas = new SqliteDatabaseConnection();
             ListBox1.Items.AddRange(databas.HämtaStudenter());
             ListBox2.Items.AddRange(databas.HämtaKurser());
+            ListBox3.Items.AddRange(databas.HämtaKursmoment());
+            comboBox2.Items.AddRange(databas.HämtaKursmoment());
+           
+
+                foreach (string a in betyg)
+            {
+                comboBox1.Items.Add(a);
+
+            }
 
         }
 
