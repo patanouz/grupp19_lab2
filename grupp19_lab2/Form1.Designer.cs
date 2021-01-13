@@ -37,6 +37,8 @@ namespace grupp19_lab2
             this.lärareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hanteraLärareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hanteraLärarlagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,29 +71,31 @@ namespace grupp19_lab2
             this.kurserToolStripMenuItem.Name = "kurserToolStripMenuItem";
             this.kurserToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.kurserToolStripMenuItem.Text = "Kurser";
-            this.kurserToolStripMenuItem.Click += new System.EventHandler(this.kurserToolStripMenuItem_Click);
             this.kurserToolStripMenuItem.MouseHover += new System.EventHandler(this.kurserToolStripMenuItem_MouseHover);
             // 
             // nyKursToolStripMenuItem
             // 
             this.nyKursToolStripMenuItem.Name = "nyKursToolStripMenuItem";
-            this.nyKursToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.nyKursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nyKursToolStripMenuItem.Text = "Ny kurs";
             this.nyKursToolStripMenuItem.Click += new System.EventHandler(this.nyKursToolStripMenuItem_Click);
             // 
             // hanteraKurserToolStripMenuItem
             // 
             this.hanteraKurserToolStripMenuItem.Name = "hanteraKurserToolStripMenuItem";
-            this.hanteraKurserToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.hanteraKurserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hanteraKurserToolStripMenuItem.Text = "Hantera kurser";
             this.hanteraKurserToolStripMenuItem.Click += new System.EventHandler(this.hanteraKurserToolStripMenuItem_Click);
             // 
             // lärareToolStripMenuItem
             // 
+            this.lärareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hanteraLärareToolStripMenuItem,
+            this.hanteraLärarlagToolStripMenuItem});
             this.lärareToolStripMenuItem.Name = "lärareToolStripMenuItem";
             this.lärareToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.lärareToolStripMenuItem.Text = "Lärare";
-            this.lärareToolStripMenuItem.Click += new System.EventHandler(this.lärareToolStripMenuItem_Click);
+            this.lärareToolStripMenuItem.MouseHover += new System.EventHandler(this.lärareToolStripMenuItem_MouseHover);
             // 
             // betygToolStripMenuItem
             // 
@@ -107,6 +111,20 @@ namespace grupp19_lab2
             this.hjälpToolStripMenuItem.Text = "Hjälp";
             this.hjälpToolStripMenuItem.Click += new System.EventHandler(this.hjälpToolStripMenuItem_Click);
             // 
+            // hanteraLärareToolStripMenuItem
+            // 
+            this.hanteraLärareToolStripMenuItem.Name = "hanteraLärareToolStripMenuItem";
+            this.hanteraLärareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hanteraLärareToolStripMenuItem.Text = "Hantera lärare";
+            this.hanteraLärareToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärareToolStripMenuItem_Click);
+            // 
+            // hanteraLärarlagToolStripMenuItem
+            // 
+            this.hanteraLärarlagToolStripMenuItem.Name = "hanteraLärarlagToolStripMenuItem";
+            this.hanteraLärarlagToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hanteraLärarlagToolStripMenuItem.Text = "Hantera lärarlag";
+            this.hanteraLärarlagToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärarlagToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +134,6 @@ namespace grupp19_lab2
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -134,6 +151,8 @@ namespace grupp19_lab2
         private System.Windows.Forms.ToolStripMenuItem hjälpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nyKursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hanteraKurserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hanteraLärareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hanteraLärarlagToolStripMenuItem;
     }
 }
 
