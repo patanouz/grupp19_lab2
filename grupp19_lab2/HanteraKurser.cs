@@ -70,8 +70,10 @@ namespace grupp19_lab2
                 addStudentComboBox.Items.Clear();
                 allaStudenter.Clear();
                 temporäraStudenter.Clear();
+                comboBoxStudenter.Clear();
                 allaStudenter.AddRange(form1.Databasanslutning().HämtaStudenter());
                 temporäraStudenter.AddRange(kursLista[kurserListBox.SelectedIndex].HämtaStudenter());
+                
                 foreach (Student s in allaStudenter)
                 {
                     if (!kursLista[kurserListBox.SelectedIndex].HämtaStudenter().Contains(s))
