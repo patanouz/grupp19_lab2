@@ -109,6 +109,7 @@ namespace grupp19_lab2
             this.BetygComboBox.Name = "BetygComboBox";
             this.BetygComboBox.Size = new System.Drawing.Size(216, 21);
             this.BetygComboBox.TabIndex = 47;
+            this.BetygComboBox.SelectedIndexChanged += new System.EventHandler(this.BetygComboBox_SelectedIndexChanged);
             // 
             // KursTextBox
             // 

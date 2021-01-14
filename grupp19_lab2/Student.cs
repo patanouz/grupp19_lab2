@@ -32,11 +32,18 @@ namespace grupp19_lab2
 
         public void LäggTillBetysunderlag(IBetygsunderlag underlag)
         {
-            if(kurslista.ContainsKey(underlag))
-            {
-                return;
-            }
+            if (kurslista.ContainsKey(underlag)) return;
+
             kurslista.Add(underlag, "-");
+
+            if (underlag.GetType() == typeof(Kurs))
+            {
+                Kurs k = (Kurs)underlag;
+                foreach (Kursmoment km in k.HämtaKursmoment())
+                {
+                    this.LäggTillBetysunderlag(km);
+                }
+            }
 
         }
 

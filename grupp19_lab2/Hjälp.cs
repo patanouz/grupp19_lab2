@@ -27,39 +27,6 @@ namespace grupp19_lab2
             this.form1 = form1;
             InitializeComponent();
 
-            //1. Studenter
-            //2. Kurser
-            //3. Kursmoment
-            //4. Lärare
-            //5. Lärarlag
-
-
-            //Test databas
-            databas = form1.Databasanslutning();
-            kurser = new List<Kurs>(databas.HämtaKurser());
-            
-
-            listBox1.Items.AddRange(databas.HämtaStudenter());
-            listBox2.Items.AddRange(databas.HämtaKurser());
-            listBox3.Items.AddRange(databas.HämtaKursmoment());
-            listBox4.Items.AddRange(databas.HämtaLärare());
-            listBox5.Items.AddRange(databas.HämtaLärarlag());
-
-
-
-            ///
-            ///
-            studenter = new List<Student>();
-            studenter.AddRange(form1.Databasanslutning().HämtaStudenter());
-            listBox6.Items.AddRange(studenter.ToArray());
-
-            for (int i = 0; i < form1.Databasanslutning().HämtaKurser().Length; i++)
-            {
-                studenter[0].LäggTillBetysunderlag(form1.Databasanslutning().HämtaKurser()[i]);
-            }
-            
-            ///
-            ///
 
         }
 
