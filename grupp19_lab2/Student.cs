@@ -32,9 +32,6 @@ namespace grupp19_lab2
 
         public void LäggTillBetysunderlag(IBetygsunderlag underlag)
         {
-
-            MessageBox.Show(this.HämtaNamn() + " lägger till: " + underlag.HämtaNamn());
-
             if(kurslista.ContainsKey(underlag))
             {
                 return;
