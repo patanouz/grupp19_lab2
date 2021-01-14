@@ -74,7 +74,7 @@ namespace grupp19_lab2
             {
                 temporaryTeacherList.Add(item);
             }
-            lararlagLista.Add(k);
+            form1.Databasanslutning().SparaNyttLärarlag(k);
             MessageBox.Show(k + " was created!");
         }
 
