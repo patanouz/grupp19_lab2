@@ -28,8 +28,7 @@ namespace grupp19_lab2
             availableStudents.AddRange(form1.Databasanslutning().HämtaStudenter());
             UppdateraLärarlagComboBox();
             UppdateraStudenterListBox();
-            KollaVald();
-            
+            KollaVald();            
         }
 
         private void Kurser_Load(object sender, EventArgs e)
@@ -39,7 +38,11 @@ namespace grupp19_lab2
 
         private void UppdateraLärarlagComboBox()
         {
+            lararlagLista.Clear();
+            lararlagLista.AddRange(form1.Databasanslutning().HämtaLärarlag());
             lärarlagComboBox.Items.Clear();
+            lärarlagComboBox.ResetText();
+            lärarlagComboBox.SelectedIndex = -1;
             foreach (LärarLag ll in lararlagLista)
             {
                lärarlagComboBox.Items.Add(ll);
@@ -48,13 +51,14 @@ namespace grupp19_lab2
 
         private void UppdateraStudenterListBox()
         {
+            availableStudents.Clear();
+            availableStudents.AddRange(form1.Databasanslutning().HämtaStudenter());
             availableStudentsListBox.Items.Clear();
             foreach (Student s in availableStudents)
             {
                 availableStudentsListBox.Items.Add(s);
             }
         }
-
 
         private void addKursmomentButton_Click(object sender, EventArgs e)
         {
@@ -77,6 +81,7 @@ namespace grupp19_lab2
                 }
                 foreach (Student s in addedStudentsListBox.Items)
                 {
+
                     addedStudents.Add(s);
                     s.LäggTillBetysunderlag(k);
                     
@@ -178,6 +183,12 @@ namespace grupp19_lab2
         private void label2_Click(object sender, EventArgs e)
         {
             // Denna används ej!
+        }
+
+        public void Uppdatera() // Läs in alla listor som finns mot dessa!
+        {
+            UppdateraStudenterListBox();
+            UppdateraLärarlagComboBox();
         }
     }
 }
