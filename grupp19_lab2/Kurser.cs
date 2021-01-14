@@ -184,7 +184,7 @@ namespace grupp19_lab2
             // Denna används ej!
         }
 
-        public void Uppdatera() // Läs in alla listor som finns mot dessa!
+        public void Uppdatera()
         {
             UppdateraStudenterListBox();
             UppdateraLärarlagComboBox();

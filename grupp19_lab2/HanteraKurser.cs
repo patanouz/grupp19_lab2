@@ -182,11 +182,13 @@ namespace grupp19_lab2
                 $"{kursLista[kurserListBox.SelectedIndex].HämtaNamn()}?", "Varning", MessageBoxButtons.YesNo);
             if (resultat == DialogResult.Yes)
             {
+                
+                studentLista[studentListBox.SelectedIndex].TabortKurs(kursLista[kurserListBox.SelectedIndex]);
                 studentLista.RemoveAt(studentListBox.SelectedIndex);
                 UppdateraStudentListBox();
                 studentListBox.SelectedItem = -1;
                 KollaVald();
-            }            
+            }          
 
         }
 
@@ -280,6 +282,7 @@ namespace grupp19_lab2
         {
             if (addStudentComboBox.SelectedIndex != -1)
             {
+                
                 kursLista[kurserListBox.SelectedIndex].LäggTillStudent(comboBoxStudenter[addStudentComboBox.SelectedIndex]);
                 comboBoxStudenter[addStudentComboBox.SelectedIndex].LäggTillBetysunderlag(kursLista[kurserListBox.SelectedIndex]);
                 UppdateraStudentListBox();
