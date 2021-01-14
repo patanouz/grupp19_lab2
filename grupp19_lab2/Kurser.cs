@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Denna funkar nu!
 
 namespace grupp19_lab2
 {
