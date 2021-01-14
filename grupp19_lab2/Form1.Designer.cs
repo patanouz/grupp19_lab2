@@ -29,16 +29,17 @@ namespace grupp19_lab2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.studenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kurserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nyKursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hanteraKurserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lärareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.betygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hanteraLärareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hanteraLärarlagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.betygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,14 +77,14 @@ namespace grupp19_lab2
             // nyKursToolStripMenuItem
             // 
             this.nyKursToolStripMenuItem.Name = "nyKursToolStripMenuItem";
-            this.nyKursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nyKursToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.nyKursToolStripMenuItem.Text = "Ny kurs";
             this.nyKursToolStripMenuItem.Click += new System.EventHandler(this.nyKursToolStripMenuItem_Click);
             // 
             // hanteraKurserToolStripMenuItem
             // 
             this.hanteraKurserToolStripMenuItem.Name = "hanteraKurserToolStripMenuItem";
-            this.hanteraKurserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hanteraKurserToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.hanteraKurserToolStripMenuItem.Text = "Hantera kurser";
             this.hanteraKurserToolStripMenuItem.Click += new System.EventHandler(this.hanteraKurserToolStripMenuItem_Click);
             // 
@@ -96,6 +97,20 @@ namespace grupp19_lab2
             this.lärareToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.lärareToolStripMenuItem.Text = "Lärare";
             this.lärareToolStripMenuItem.MouseHover += new System.EventHandler(this.lärareToolStripMenuItem_MouseHover);
+            // 
+            // hanteraLärareToolStripMenuItem
+            // 
+            this.hanteraLärareToolStripMenuItem.Name = "hanteraLärareToolStripMenuItem";
+            this.hanteraLärareToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.hanteraLärareToolStripMenuItem.Text = "Hantera lärare";
+            this.hanteraLärareToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärareToolStripMenuItem_Click);
+            // 
+            // hanteraLärarlagToolStripMenuItem
+            // 
+            this.hanteraLärarlagToolStripMenuItem.Name = "hanteraLärarlagToolStripMenuItem";
+            this.hanteraLärarlagToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.hanteraLärarlagToolStripMenuItem.Text = "Hantera lärarlag";
+            this.hanteraLärarlagToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärarlagToolStripMenuItem_Click);
             // 
             // betygToolStripMenuItem
             // 
@@ -111,29 +126,18 @@ namespace grupp19_lab2
             this.hjälpToolStripMenuItem.Text = "Hjälp";
             this.hjälpToolStripMenuItem.Click += new System.EventHandler(this.hjälpToolStripMenuItem_Click);
             // 
-            // hanteraLärareToolStripMenuItem
-            // 
-            this.hanteraLärareToolStripMenuItem.Name = "hanteraLärareToolStripMenuItem";
-            this.hanteraLärareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hanteraLärareToolStripMenuItem.Text = "Hantera lärare";
-            this.hanteraLärareToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärareToolStripMenuItem_Click);
-            // 
-            // hanteraLärarlagToolStripMenuItem
-            // 
-            this.hanteraLärarlagToolStripMenuItem.Name = "hanteraLärarlagToolStripMenuItem";
-            this.hanteraLärarlagToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hanteraLärarlagToolStripMenuItem.Text = "Hantera lärarlag";
-            this.hanteraLärarlagToolStripMenuItem.Click += new System.EventHandler(this.hanteraLärarlagToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "aPlus - från flåse till ingenjör";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

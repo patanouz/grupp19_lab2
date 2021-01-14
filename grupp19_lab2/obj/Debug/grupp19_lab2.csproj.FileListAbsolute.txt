@@ -125,3 +125,4 @@ C:\Users\Jalms\Source\Repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.csp
 C:\Users\Jalms\Source\Repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.csproj.CopyComplete
 C:\Users\Jalms\Source\Repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.exe
 C:\Users\Jalms\Source\Repos\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.pdb
+C:\Users\Björn\Source\Repos\patanouz\grupp19_lab2\grupp19_lab2\obj\Debug\grupp19_lab2.HanteraLärarlag.resources

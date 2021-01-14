@@ -103,6 +103,7 @@ namespace grupp19_lab2
             resetVisiblity();
             betyg.Show();
             betyg.Location = startPoint;
+            betyg.Updatera();
 
         }
 
