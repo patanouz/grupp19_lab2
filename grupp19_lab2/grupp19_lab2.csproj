@@ -95,6 +95,7 @@
       <DependentUpon>Hjälp.cs</DependentUpon>
     </Compile>
     <Compile Include="IDatabaseConnection.cs" />
+    <Compile Include="ILärarlag.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="Kurs.cs" />
     <Compile Include="Kurser.cs">
