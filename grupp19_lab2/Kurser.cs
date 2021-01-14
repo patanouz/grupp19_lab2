@@ -78,6 +78,7 @@ namespace grupp19_lab2
                 foreach (Student s in addedStudentsListBox.Items)
                 {
                     addedStudents.Add(s);
+                    s.LäggTillBetysunderlag(k);
                     
                 }
                 k.LäggTillStudent(addedStudents.ToArray());

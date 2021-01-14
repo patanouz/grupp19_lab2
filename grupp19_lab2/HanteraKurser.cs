@@ -73,7 +73,8 @@ namespace grupp19_lab2
                 comboBoxStudenter.Clear();
                 allaStudenter.AddRange(form1.Databasanslutning().HämtaStudenter());
                 temporäraStudenter.AddRange(kursLista[kurserListBox.SelectedIndex].HämtaStudenter());
-                
+                addStudentComboBox.ResetText();
+                addStudentComboBox.SelectedIndex = -1;
                 foreach (Student s in allaStudenter)
                 {
                     if (!kursLista[kurserListBox.SelectedIndex].HämtaStudenter().Contains(s))
@@ -148,7 +149,7 @@ namespace grupp19_lab2
 
         private void addKursmomentButton_Click(object sender, EventArgs e)
         {
-            // Lägg till nya kursmoment
+            // Denna används ej!
         }
 
         private void removeKursmomentButton_Click(object sender, EventArgs e)
@@ -204,21 +205,17 @@ namespace grupp19_lab2
         {
             if (kurserListBox.SelectedIndex == -1)
             {
-
                 removeKursButton.Enabled = false;
                 addKursmomentButton.Enabled = false;
                 addKursmomentButton.Enabled = false;
                 addStudentButton.Enabled = false;
-
             }
             else
             {
-
                 removeKursButton.Enabled = true;
                 addKursmomentButton.Enabled = true;
                 addKursmomentButton.Enabled = true;
                 addStudentButton.Enabled = true;
-
             }
             if (kursmomentListBox.SelectedIndex == -1)
             {
@@ -282,9 +279,10 @@ namespace grupp19_lab2
             if (addStudentComboBox.SelectedIndex != -1)
             {
                 kursLista[kurserListBox.SelectedIndex].LäggTillStudent(comboBoxStudenter[addStudentComboBox.SelectedIndex]);
+                comboBoxStudenter[addStudentComboBox.SelectedIndex].LäggTillBetysunderlag(kursLista[kurserListBox.SelectedIndex]);
                 UppdateraStudentListBox();
                 UppdateraStudentComboBox();
-
+                KollaVald();
             }                        
         }
 
