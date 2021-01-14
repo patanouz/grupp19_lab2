@@ -41,14 +41,22 @@ namespace grupp19_lab2
 
         }
 
-        public void Updatera()
+        public void Uppdatera()
         {
             StudentListBox.Items.Clear();
             BetygListBox.Items.Clear();
             studenter.AddRange(form1.Databasanslutning().HämtaStudenter());
             StudentListBox.Items.AddRange(form1.Databasanslutning().HämtaStudenter());
 
-            //TODO: Reset på all skit. 
+            KursTextBox.Text = "";
+            KursmomentTextBox.Text = "";
+            SparaButton.Enabled = false;
+            BetygComboBox.Enabled = false;
+            BetygComboBox.SelectedIndex = 0;
+
+            KurserListBox.Items.Clear();
+            BetygListBox.Items.Clear();
+            KursBetygListBox.Items.Clear();
 
         }
 
@@ -57,6 +65,15 @@ namespace grupp19_lab2
             if (StudentListBox.SelectedIndex < 0)
             {
                 return;
+            }
+
+            if(studenter.Count > 4)
+            {
+                foreach (var item in studenter[4].läsbarKurslista)
+                {
+
+                    MessageBox.Show("Test: " + item.Key + " " + item.Value);
+                }
             }
 
             StudentTextBox.Text = studenter[StudentListBox.SelectedIndex].HämtaNamn();

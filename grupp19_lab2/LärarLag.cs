@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace grupp19_lab2
 {
-    public class LärarLag
+    public class LärarLag : ILärarlag
     {
 
         private List<Teacher> lärarLista;
@@ -68,7 +68,6 @@ namespace grupp19_lab2
                 }
             }
         }
-
 
         public override string ToString()
         {

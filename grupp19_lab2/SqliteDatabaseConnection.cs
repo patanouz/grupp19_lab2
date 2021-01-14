@@ -48,8 +48,8 @@ namespace grupp19_lab2
             lärarLista.Add(new Teacher("Rune", "Holta", "456"));
 
             //Studenter i kurs
-            kursLista[0].LäggTillStudent(studentLista.ToArray());
-            kursLista[2].LäggTillStudent(studentLista.ToArray());
+            //kursLista[0].LäggTillStudent(studentLista.ToArray());
+            //kursLista[2].LäggTillStudent(studentLista.ToArray());
 
             //Lärarlag
             lärarlagLista.Add(new LärarLag("Första lärarlaget"));
@@ -60,7 +60,7 @@ namespace grupp19_lab2
             kursLista[1].LäggTillLärarlag(lärarlagLista[1]);
 
             //studenter som läser kurser
-            
+           
             studentLista[0].LäggTillBetysunderlag(kursLista[0]);
             studentLista[1].LäggTillBetysunderlag(kursLista[1]);
             studentLista[1].LäggTillBetysunderlag(kursLista[2]);

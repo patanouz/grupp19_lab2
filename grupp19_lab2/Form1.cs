@@ -103,7 +103,7 @@ namespace grupp19_lab2
             resetVisiblity();
             betyg.Show();
             betyg.Location = startPoint;
-            betyg.Updatera();
+            betyg.Uppdatera();
 
         }
 
@@ -121,6 +121,7 @@ namespace grupp19_lab2
             resetVisiblity();
             kurser.Show();
             kurser.Location = startPoint;
+            kurser.Uppdatera();
 
         }
 
@@ -129,6 +130,7 @@ namespace grupp19_lab2
             resetVisiblity();
             hanteraKurser.Show();
             hanteraKurser.Location = startPoint;
+            hanteraKurser.Uppdatera();
 
         }
 

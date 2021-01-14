@@ -39,6 +39,10 @@ namespace grupp19_lab2
         public void LäggTillStudent(params Student[] studenter)
         {
             studentLista.AddRange(studenter);
+            foreach (var item in studenter)
+            {
+                item.LäggTillBetysunderlag(this);
+            }
         }
 
         public List<Student> HämtaStudenter()
@@ -80,6 +84,14 @@ namespace grupp19_lab2
         public void LäggTillKursmoment(params Kursmoment[] kursmoment)
         {
             this.kursmoment.AddRange(kursmoment);
+            foreach(var student in studentLista)
+            {
+                foreach (var moment in kursmoment)
+                {
+
+                    student.LäggTillBetysunderlag(moment);
+                } 
+            }
         }
 
         public void BytNamnPåKurs(string kursNamn)
