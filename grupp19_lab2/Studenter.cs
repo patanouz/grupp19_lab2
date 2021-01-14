@@ -113,7 +113,7 @@ namespace grupp19_lab2
                 studentLista.Clear();
                 studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
                 UppdateraStudentListBox();
-                MessageBox.Show("Studenten är sparad!");
+                MessageBox.Show("Studenten är sparad!","Hantera student");
             }
             // Normalt sett hade vi inte behövt loopa genom det, men eftersom det går att söka behövs den.
             foreach (Student item in studentLista)
@@ -141,7 +141,8 @@ namespace grupp19_lab2
                 {
                     return;
                 }
-                if (studentLista.Count <= 0) { return; }
+
+            if (studentLista.Count <= 0) { return; }
 
                 if (söktaStudenter.Count < studentListBox.Items.Count)
                 {

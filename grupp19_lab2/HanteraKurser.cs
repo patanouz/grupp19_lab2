@@ -36,6 +36,8 @@ namespace grupp19_lab2
 
         private void UppdateraKurserListBox()
         {
+            kursLista.Clear();
+            kursLista.AddRange(form1.Databasanslutning().HämtaKurser());
             kurserListBox.Items.Clear();
             foreach (Kurs s in kursLista)
             {
@@ -289,6 +291,11 @@ namespace grupp19_lab2
         private void addStudentComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             KollaVald();
+        }
+
+        public void Uppdatera()
+        {
+            UppdateraKurserListBox();
         }
     }
 }
