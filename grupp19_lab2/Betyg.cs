@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace grupp19_lab2
 {
+    
+    
+   
     public partial class Betyg : Form
     {
         Form1 form1;
@@ -27,8 +30,9 @@ namespace grupp19_lab2
 
             databas = new SqliteDatabaseConnection();
             ListBox1.Items.AddRange(databas.HämtaStudenter());
-            ListBox2.Items.AddRange(databas.HämtaKurser());
+           /*ListBox2.Items.AddRange(databas.HämtaKurser());
             ListBox3.Items.AddRange(databas.HämtaKursmoment());
+            */
             comboBox2.Items.AddRange(databas.HämtaKursmoment());
            
 
@@ -55,8 +59,46 @@ namespace grupp19_lab2
 
         private void Elev_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            List<Studieresultat> sr = new List<Studieresultat>();
+            sr.Add(new Studieresultat("Anders Andersson", "Webbdesign", "Testtenta", "G"));
+            /*
+             * sr.Add(new Studieresultat(studentnamn=textBox1.Text, kurs=comboBox2.SelectedItem.Text, kursmoment= comboBox1.SelectedItem.Text, betyg=comboBox2.SelectedItem.Text
+             * 
+             */
             textBox1.Text = ListBox1.SelectedItem.ToString();
+            //Skapar en array för att lagra kurser
+            Kurs[] kurslista = new Kurs[0];
+            Kursmoment[] kursmomentlista = new Kursmoment[0];
+            kursmomentlista = databas.HämtaKursmoment().ToArray();
+            //Lägger in kurser i arrayen
+            kurslista = databas.HämtaKurser().ToArray();
+
+
+
+            for (int i = 0; i < sr.Count; i++)
+            {
+
+                if (ListBox1.SelectedItem.ToString() == (sr[i].Studentnamn))
+                {
+                    for (int j = 0; j < kurslista.Length; j++)
+                    {
+                        if (kurslista[j].ToString() == sr[i].Kurs)
+                        {
+                            ListBox2.Items.Add(sr[i].Kurs);
+                            for (int y = 0; y < kursmomentlista.Length; y++)
+                            {
+                                if (kursmomentlista[y].ToString() == sr[i].Kursmoment)
+                                {
+                                    ListBox3.Items.Add(sr[i].Kursmoment);
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+            }
+
 
 
 
@@ -90,5 +132,40 @@ namespace grupp19_lab2
         {
 
         }
+    }
+    public class Studieresultat
+    {
+        private string studentnamn;
+        private string kurs;
+        private string kursmoment;
+        private string betygresultat;
+        public Studieresultat(string studentnamn, string kurs, string kursmoment, string betygresultat)
+        {
+            this.studentnamn = studentnamn;
+            this.kurs = kurs;
+            this.kursmoment = kursmoment;
+            this.betygresultat = betygresultat;
+        }
+        public string Studentnamn
+        {
+            get { return studentnamn; }
+            set { studentnamn = value; }
+        }
+        public string Kurs
+        {
+            get { return kurs; }
+            set { kurs = value; }
+        }
+        public string Kursmoment
+        {
+            get { return kursmoment; }
+            set { kursmoment = value; }
+        }
+        public string BetygsResultat
+        {
+            get { return betygresultat; }
+            set { betygresultat = value; }
+        }
+
     }
 }
