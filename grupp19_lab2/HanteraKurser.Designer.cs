@@ -33,8 +33,6 @@ namespace grupp19_lab2
             this.kursmomentListBox = new System.Windows.Forms.ListBox();
             this.studentListBox = new System.Windows.Forms.ListBox();
             this.kurserLabel = new System.Windows.Forms.Label();
-            this.kursmomentLabel = new System.Windows.Forms.Label();
-            this.studentLabel = new System.Windows.Forms.Label();
             this.lärarlagLabel = new System.Windows.Forms.Label();
             this.removeKursmomentButton = new System.Windows.Forms.Button();
             this.removeKursButton = new System.Windows.Forms.Button();
@@ -43,7 +41,6 @@ namespace grupp19_lab2
             this.addKursmomentTextBox = new System.Windows.Forms.TextBox();
             this.kursmomentGroupBox = new System.Windows.Forms.GroupBox();
             this.addKursmomentButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.addStudentComboBox = new System.Windows.Forms.ComboBox();
             this.addStudentButton = new System.Windows.Forms.Button();
             this.studentGroupBox = new System.Windows.Forms.GroupBox();
@@ -57,34 +54,36 @@ namespace grupp19_lab2
             this.kurserListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kurserListBox.FormattingEnabled = true;
             this.kurserListBox.ItemHeight = 24;
-            this.kurserListBox.Location = new System.Drawing.Point(45, 186);
+            this.kurserListBox.Location = new System.Drawing.Point(45, 166);
             this.kurserListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kurserListBox.Name = "kurserListBox";
-            this.kurserListBox.Size = new System.Drawing.Size(693, 192);
+            this.kurserListBox.Size = new System.Drawing.Size(782, 504);
             this.kurserListBox.TabIndex = 0;
             this.kurserListBox.SelectedIndexChanged += new System.EventHandler(this.kurserListBox_SelectedIndexChanged);
             // 
             // kursmomentListBox
             // 
             this.kursmomentListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kursmomentListBox.Font = new System.Drawing.Font("Segoe UI", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kursmomentListBox.FormattingEnabled = true;
-            this.kursmomentListBox.ItemHeight = 24;
-            this.kursmomentListBox.Location = new System.Drawing.Point(48, 450);
+            this.kursmomentListBox.ItemHeight = 25;
+            this.kursmomentListBox.Location = new System.Drawing.Point(14, 115);
             this.kursmomentListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kursmomentListBox.Name = "kursmomentListBox";
-            this.kursmomentListBox.Size = new System.Drawing.Size(693, 192);
+            this.kursmomentListBox.Size = new System.Drawing.Size(457, 175);
             this.kursmomentListBox.TabIndex = 1;
             this.kursmomentListBox.SelectedIndexChanged += new System.EventHandler(this.kursmomentListBox_SelectedIndexChanged);
             // 
             // studentListBox
             // 
             this.studentListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.studentListBox.Font = new System.Drawing.Font("Segoe UI", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentListBox.FormattingEnabled = true;
-            this.studentListBox.ItemHeight = 24;
-            this.studentListBox.Location = new System.Drawing.Point(47, 704);
+            this.studentListBox.ItemHeight = 25;
+            this.studentListBox.Location = new System.Drawing.Point(14, 120);
             this.studentListBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.studentListBox.Name = "studentListBox";
-            this.studentListBox.Size = new System.Drawing.Size(693, 192);
+            this.studentListBox.Size = new System.Drawing.Size(455, 225);
             this.studentListBox.TabIndex = 2;
             this.studentListBox.SelectedIndexChanged += new System.EventHandler(this.studentListBox_SelectedIndexChanged);
             // 
@@ -92,45 +91,23 @@ namespace grupp19_lab2
             // 
             this.kurserLabel.AutoSize = true;
             this.kurserLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kurserLabel.Location = new System.Drawing.Point(39, 151);
+            this.kurserLabel.Location = new System.Drawing.Point(39, 131);
             this.kurserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kurserLabel.Name = "kurserLabel";
             this.kurserLabel.Size = new System.Drawing.Size(82, 32);
             this.kurserLabel.TabIndex = 3;
             this.kurserLabel.Text = "Kurser";
             // 
-            // kursmomentLabel
-            // 
-            this.kursmomentLabel.AutoSize = true;
-            this.kursmomentLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kursmomentLabel.Location = new System.Drawing.Point(43, 412);
-            this.kursmomentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.kursmomentLabel.Name = "kursmomentLabel";
-            this.kursmomentLabel.Size = new System.Drawing.Size(152, 32);
-            this.kursmomentLabel.TabIndex = 4;
-            this.kursmomentLabel.Text = "Kursmoment";
-            // 
-            // studentLabel
-            // 
-            this.studentLabel.AutoSize = true;
-            this.studentLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentLabel.Location = new System.Drawing.Point(43, 664);
-            this.studentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.studentLabel.Name = "studentLabel";
-            this.studentLabel.Size = new System.Drawing.Size(119, 32);
-            this.studentLabel.TabIndex = 5;
-            this.studentLabel.Text = "Studenter";
-            // 
             // lärarlagLabel
             // 
             this.lärarlagLabel.AutoSize = true;
-            this.lärarlagLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lärarlagLabel.Location = new System.Drawing.Point(1045, 186);
+            this.lärarlagLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lärarlagLabel.Location = new System.Drawing.Point(38, 807);
             this.lärarlagLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lärarlagLabel.Name = "lärarlagLabel";
-            this.lärarlagLabel.Size = new System.Drawing.Size(121, 38);
+            this.lärarlagLabel.Size = new System.Drawing.Size(264, 38);
             this.lärarlagLabel.TabIndex = 6;
-            this.lärarlagLabel.Text = "Lärarlag:";
+            this.lärarlagLabel.Text = "Lärarlag för kursen:";
             // 
             // removeKursmomentButton
             // 
@@ -138,7 +115,7 @@ namespace grupp19_lab2
             this.removeKursmomentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeKursmomentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeKursmomentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeKursmomentButton.Location = new System.Drawing.Point(749, 450);
+            this.removeKursmomentButton.Location = new System.Drawing.Point(14, 296);
             this.removeKursmomentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeKursmomentButton.Name = "removeKursmomentButton";
             this.removeKursmomentButton.Size = new System.Drawing.Size(129, 52);
@@ -153,7 +130,7 @@ namespace grupp19_lab2
             this.removeKursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeKursButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeKursButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeKursButton.Location = new System.Drawing.Point(746, 186);
+            this.removeKursButton.Location = new System.Drawing.Point(45, 676);
             this.removeKursButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeKursButton.Name = "removeKursButton";
             this.removeKursButton.Size = new System.Drawing.Size(129, 52);
@@ -168,7 +145,7 @@ namespace grupp19_lab2
             this.removeStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeStudentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeStudentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeStudentButton.Location = new System.Drawing.Point(746, 706);
+            this.removeStudentButton.Location = new System.Drawing.Point(14, 351);
             this.removeStudentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeStudentButton.Name = "removeStudentButton";
             this.removeStudentButton.Size = new System.Drawing.Size(129, 52);
@@ -180,69 +157,60 @@ namespace grupp19_lab2
             // aktuelltLärarlagLabel
             // 
             this.aktuelltLärarlagLabel.AutoSize = true;
-            this.aktuelltLärarlagLabel.Location = new System.Drawing.Point(1049, 233);
+            this.aktuelltLärarlagLabel.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktuelltLärarlagLabel.Location = new System.Drawing.Point(39, 850);
             this.aktuelltLärarlagLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aktuelltLärarlagLabel.Name = "aktuelltLärarlagLabel";
-            this.aktuelltLärarlagLabel.Size = new System.Drawing.Size(154, 25);
+            this.aktuelltLärarlagLabel.Size = new System.Drawing.Size(183, 32);
             this.aktuelltLärarlagLabel.TabIndex = 14;
             this.aktuelltLärarlagLabel.Text = "Kursens lärarlag";
             // 
             // addKursmomentTextBox
             // 
-            this.addKursmomentTextBox.Location = new System.Drawing.Point(14, 99);
+            this.addKursmomentTextBox.Location = new System.Drawing.Point(14, 48);
             this.addKursmomentTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addKursmomentTextBox.Name = "addKursmomentTextBox";
-            this.addKursmomentTextBox.Size = new System.Drawing.Size(305, 45);
+            this.addKursmomentTextBox.Size = new System.Drawing.Size(313, 38);
             this.addKursmomentTextBox.TabIndex = 15;
             // 
             // kursmomentGroupBox
             // 
             this.kursmomentGroupBox.Controls.Add(this.addKursmomentButton);
-            this.kursmomentGroupBox.Controls.Add(this.label1);
             this.kursmomentGroupBox.Controls.Add(this.addKursmomentTextBox);
-            this.kursmomentGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kursmomentGroupBox.Location = new System.Drawing.Point(1052, 609);
+            this.kursmomentGroupBox.Controls.Add(this.kursmomentListBox);
+            this.kursmomentGroupBox.Controls.Add(this.removeKursmomentButton);
+            this.kursmomentGroupBox.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kursmomentGroupBox.Location = new System.Drawing.Point(921, 131);
             this.kursmomentGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.kursmomentGroupBox.Name = "kursmomentGroupBox";
             this.kursmomentGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.kursmomentGroupBox.Size = new System.Drawing.Size(327, 266);
+            this.kursmomentGroupBox.Size = new System.Drawing.Size(484, 366);
             this.kursmomentGroupBox.TabIndex = 16;
             this.kursmomentGroupBox.TabStop = false;
-            this.kursmomentGroupBox.Text = "Kursmoment";
+            this.kursmomentGroupBox.Text = "Lägg till kursmoment";
             // 
             // addKursmomentButton
             // 
             this.addKursmomentButton.BackColor = System.Drawing.SystemColors.ControlText;
             this.addKursmomentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addKursmomentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addKursmomentButton.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addKursmomentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addKursmomentButton.Location = new System.Drawing.Point(15, 159);
+            this.addKursmomentButton.Location = new System.Drawing.Point(335, 37);
             this.addKursmomentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addKursmomentButton.Name = "addKursmomentButton";
-            this.addKursmomentButton.Size = new System.Drawing.Size(136, 70);
+            this.addKursmomentButton.Size = new System.Drawing.Size(136, 59);
             this.addKursmomentButton.TabIndex = 17;
             this.addKursmomentButton.Text = "Lägg till";
             this.addKursmomentButton.UseVisualStyleBackColor = false;
             this.addKursmomentButton.Click += new System.EventHandler(this.addKursmomentButton_Click_1);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 32);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Ange moment";
-            // 
             // addStudentComboBox
             // 
             this.addStudentComboBox.FormattingEnabled = true;
-            this.addStudentComboBox.Location = new System.Drawing.Point(14, 64);
+            this.addStudentComboBox.Location = new System.Drawing.Point(12, 49);
             this.addStudentComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addStudentComboBox.Name = "addStudentComboBox";
-            this.addStudentComboBox.Size = new System.Drawing.Size(305, 46);
+            this.addStudentComboBox.Size = new System.Drawing.Size(313, 39);
             this.addStudentComboBox.TabIndex = 17;
             this.addStudentComboBox.SelectedIndexChanged += new System.EventHandler(this.addStudentComboBox_SelectedIndexChanged);
             // 
@@ -252,10 +220,10 @@ namespace grupp19_lab2
             this.addStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStudentButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addStudentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addStudentButton.Location = new System.Drawing.Point(14, 124);
+            this.addStudentButton.Location = new System.Drawing.Point(333, 37);
             this.addStudentButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(136, 69);
+            this.addStudentButton.Size = new System.Drawing.Size(136, 61);
             this.addStudentButton.TabIndex = 18;
             this.addStudentButton.Text = "Lägg till";
             this.addStudentButton.UseVisualStyleBackColor = false;
@@ -265,15 +233,17 @@ namespace grupp19_lab2
             // 
             this.studentGroupBox.Controls.Add(this.addStudentComboBox);
             this.studentGroupBox.Controls.Add(this.addStudentButton);
-            this.studentGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentGroupBox.Location = new System.Drawing.Point(1052, 318);
+            this.studentGroupBox.Controls.Add(this.studentListBox);
+            this.studentGroupBox.Controls.Add(this.removeStudentButton);
+            this.studentGroupBox.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentGroupBox.Location = new System.Drawing.Point(921, 538);
             this.studentGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.studentGroupBox.Name = "studentGroupBox";
             this.studentGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.studentGroupBox.Size = new System.Drawing.Size(327, 219);
+            this.studentGroupBox.Size = new System.Drawing.Size(484, 425);
             this.studentGroupBox.TabIndex = 19;
             this.studentGroupBox.TabStop = false;
-            this.studentGroupBox.Text = "Studenter";
+            this.studentGroupBox.Text = "Lägg till student";
             // 
             // label2
             // 
@@ -293,15 +263,9 @@ namespace grupp19_lab2
             this.ClientSize = new System.Drawing.Size(1437, 992);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.aktuelltLärarlagLabel);
-            this.Controls.Add(this.removeStudentButton);
             this.Controls.Add(this.removeKursButton);
-            this.Controls.Add(this.removeKursmomentButton);
             this.Controls.Add(this.lärarlagLabel);
-            this.Controls.Add(this.studentLabel);
-            this.Controls.Add(this.kursmomentLabel);
             this.Controls.Add(this.kurserLabel);
-            this.Controls.Add(this.studentListBox);
-            this.Controls.Add(this.kursmomentListBox);
             this.Controls.Add(this.kurserListBox);
             this.Controls.Add(this.kursmomentGroupBox);
             this.Controls.Add(this.studentGroupBox);
@@ -324,8 +288,6 @@ namespace grupp19_lab2
         private System.Windows.Forms.ListBox kursmomentListBox;
         private System.Windows.Forms.ListBox studentListBox;
         private System.Windows.Forms.Label kurserLabel;
-        private System.Windows.Forms.Label kursmomentLabel;
-        private System.Windows.Forms.Label studentLabel;
         private System.Windows.Forms.Label lärarlagLabel;
         private System.Windows.Forms.Button removeKursmomentButton;
         private System.Windows.Forms.Button removeKursButton;
@@ -333,7 +295,6 @@ namespace grupp19_lab2
         private System.Windows.Forms.Label aktuelltLärarlagLabel;
         private System.Windows.Forms.TextBox addKursmomentTextBox;
         private System.Windows.Forms.GroupBox kursmomentGroupBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addKursmomentButton;
         private System.Windows.Forms.ComboBox addStudentComboBox;
         private System.Windows.Forms.Button addStudentButton;

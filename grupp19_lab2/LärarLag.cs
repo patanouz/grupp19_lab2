@@ -30,6 +30,11 @@ namespace grupp19_lab2
         public void LäggTillLärare(params Teacher[] teacher)
         {
             lärarLista.AddRange(teacher);
+            
+            foreach (Teacher t in teacher)
+            {
+                t.LäggtillLärarlag(this);
+            }
         }
 
         public void LäggTillKurs(params Kurs[] kurser)

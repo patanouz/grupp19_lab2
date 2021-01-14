@@ -16,6 +16,8 @@ namespace grupp19_lab2
         Form1 form1;
         List<Kurs> kurser;
 
+        List<Student> studenter;
+
         private IDatabaseConnection databas;
 
         IReadOnlyDictionary<IBetygsunderlag, string> Test;
@@ -43,6 +45,22 @@ namespace grupp19_lab2
             listBox4.Items.AddRange(databas.HämtaLärare());
             listBox5.Items.AddRange(databas.HämtaLärarlag());
 
+
+
+            ///
+            ///
+            studenter = new List<Student>();
+            studenter.AddRange(form1.Databasanslutning().HämtaStudenter());
+            listBox6.Items.AddRange(studenter.ToArray());
+
+            for (int i = 0; i < form1.Databasanslutning().HämtaKurser().Length; i++)
+            {
+                studenter[0].LäggTillBetysunderlag(form1.Databasanslutning().HämtaKurser()[i]);
+            }
+            
+            ///
+            ///
+
         }
 
         private void Hjälp_Load(object sender, EventArgs e)
@@ -59,6 +77,24 @@ namespace grupp19_lab2
         {
             listBox1.Items.Clear();
             listBox1.Items.AddRange(databas.HämtaStudenter());
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //var test = studenter[0].HämtaNamn();
+            //MessageBox.Show(test);
+            listBox7.Items.Clear();
+
+            
+
+            foreach(var item in studenter[listBox6.SelectedIndex].läsbarKurslista)
+            {
+                listBox7.Items.Add(item.Key);
+            }
+
+
+            
         }
     }
     }
