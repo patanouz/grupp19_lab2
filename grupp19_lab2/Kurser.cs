@@ -82,7 +82,10 @@ namespace grupp19_lab2
                     
                 }
                 k.LäggTillStudent(addedStudents.ToArray());
-                k.LäggTillLärarlag(new LärarLag(lärarlagComboBox.Text));
+                LärarLag ll = new LärarLag(lärarlagComboBox.Text);
+                ll.LäggTillKurs(k);
+                form1.Databasanslutning().SparaNyttLärarlag(ll);
+                k.LäggTillLärarlag(ll);                
                 addedStudentsListBox.Items.Clear();
                 availableStudentsListBox.Items.Clear();
                 UppdateraStudenterListBox();
@@ -174,7 +177,7 @@ namespace grupp19_lab2
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            // Denna används ej!
         }
     }
 }
