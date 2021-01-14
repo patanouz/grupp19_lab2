@@ -73,8 +73,6 @@ namespace grupp19_lab2
             //Lägger in kurser i arrayen
             kurslista = databas.HämtaKurser().ToArray();
 
-
-
             for (int i = 0; i < sr.Count; i++)
             {
 
@@ -82,22 +80,32 @@ namespace grupp19_lab2
                 {
                     for (int j = 0; j < kurslista.Length; j++)
                     {
-                        if (kurslista[j].ToString() == sr[i].Kurs)
+                        if (kurslista[j].ToString().Contains(sr[i].Kurs))
                         {
                             ListBox2.Items.Add(sr[i].Kurs);
+                            j++;
+
                             for (int y = 0; y < kursmomentlista.Length; y++)
                             {
-                                if (kursmomentlista[y].ToString() == sr[i].Kursmoment)
+                                if (kursmomentlista[y].ToString().Contains(sr[i].Kursmoment))
                                 {
                                     ListBox3.Items.Add(sr[i].Kursmoment);
+                                    y++;
+
                                 }
+
                             }
 
 
                         }
+
                     }
                 }
+
+
             }
+
+
 
 
 
