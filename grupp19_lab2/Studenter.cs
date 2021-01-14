@@ -137,36 +137,38 @@ namespace grupp19_lab2
 
         private void TaBortStudentButton_Click(object sender, EventArgs e)
         {
-            DialogResult answer; ;
-            answer = MessageBox.Show("Vill du ta verkligen ta bort "+studentLista[studentListBox.SelectedIndex].Förnamn+" "+studentLista[studentListBox.SelectedIndex].efternamn+"?","Ta bort?", MessageBoxButtons.YesNo);
-            if (answer == DialogResult.Yes)
-            {
                 if (studentListBox.SelectedIndex < 0)
                 {
                     return;
                 }
                 if (studentLista.Count <= 0) { return; }
+
                 if (söktaStudenter.Count < studentListBox.Items.Count)
                 {
-                    form1.Databasanslutning().TaBortStudent(studentLista[studentListBox.SelectedIndex]);
-                    studentLista.Clear();
-                    studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
-                    UppdateraStudentListBox();
-                    PersonnummerTextBox.Text = "";
-                    FörnamnTextBox.Text = "";
-                    EfternamnTextBox.Text = "";
-                    TelefonnummerTextBox.Text = "";
-                    EpostTextBox.Text = "";
-                    return;
+                    DialogResult answer;
+                    answer = MessageBox.Show("Vill du ta verkligen ta bort " + studentLista[studentListBox.SelectedIndex].Förnamn + " " + studentLista[studentListBox.SelectedIndex].efternamn + "?", "Ta bort?", MessageBoxButtons.YesNo);
+                    if (answer == DialogResult.Yes)
+                    {
+                        form1.Databasanslutning().TaBortStudent(studentLista[studentListBox.SelectedIndex]);
+                        studentLista.Clear();
+                        studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
+                        UppdateraStudentListBox();
+                        PersonnummerTextBox.Text = "";
+                        FörnamnTextBox.Text = "";
+                        EfternamnTextBox.Text = "";
+                        TelefonnummerTextBox.Text = "";
+                        EpostTextBox.Text = "";
+                        return;
+                    }
+                    else if (answer == DialogResult.No) // Detta funkar men kanske inte är det snyggaste???
+                    {
+                        return;
+                    }
                 }
                 form1.Databasanslutning().TaBortStudent((söktaStudenter[studentListBox.SelectedIndex]));
                 studentLista.Clear();
                 studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
-
-                //TODO: Ska läggas till en messagebox som frågar om man verkligen vill...
                 UppdateraStudentListBox();
-            }
-
         }
 
         private void SearchButton_Click(object sender, EventArgs e) //Sökfunktion för studenter som även ger felmeddelande när ingen sökt gubbe finns.

@@ -54,10 +54,10 @@ namespace grupp19_lab2
             this.teacherListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.teacherListBox.FormattingEnabled = true;
             this.teacherListBox.ItemHeight = 24;
-            this.teacherListBox.Location = new System.Drawing.Point(61, 306);
+            this.teacherListBox.Location = new System.Drawing.Point(51, 259);
             this.teacherListBox.Margin = new System.Windows.Forms.Padding(6);
             this.teacherListBox.Name = "teacherListBox";
-            this.teacherListBox.Size = new System.Drawing.Size(618, 528);
+            this.teacherListBox.Size = new System.Drawing.Size(618, 552);
             this.teacherListBox.TabIndex = 0;
             this.teacherListBox.SelectedIndexChanged += new System.EventHandler(this.teacherListBox_SelectedIndexChanged);
             // 
@@ -65,10 +65,10 @@ namespace grupp19_lab2
             // 
             this.teacherLabel.AutoSize = true;
             this.teacherLabel.Font = new System.Drawing.Font("Segoe UI", 21.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teacherLabel.Location = new System.Drawing.Point(51, 92);
+            this.teacherLabel.Location = new System.Drawing.Point(39, 32);
             this.teacherLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.teacherLabel.Name = "teacherLabel";
-            this.teacherLabel.Size = new System.Drawing.Size(183, 70);
+            this.teacherLabel.Size = new System.Drawing.Size(177, 68);
             this.teacherLabel.TabIndex = 1;
             this.teacherLabel.Text = "Lärare";
             // 
@@ -76,7 +76,7 @@ namespace grupp19_lab2
             // 
             this.teacherSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.teacherSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.teacherSearchBox.Location = new System.Drawing.Point(61, 210);
+            this.teacherSearchBox.Location = new System.Drawing.Point(51, 163);
             this.teacherSearchBox.Margin = new System.Windows.Forms.Padding(6);
             this.teacherSearchBox.Multiline = true;
             this.teacherSearchBox.Name = "teacherSearchBox";
@@ -90,7 +90,7 @@ namespace grupp19_lab2
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchButton.Location = new System.Drawing.Point(559, 210);
+            this.searchButton.Location = new System.Drawing.Point(549, 163);
             this.searchButton.Margin = new System.Windows.Forms.Padding(6);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(123, 46);
@@ -105,7 +105,7 @@ namespace grupp19_lab2
             this.deleteTeacherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteTeacherButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteTeacherButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteTeacherButton.Location = new System.Drawing.Point(61, 868);
+            this.deleteTeacherButton.Location = new System.Drawing.Point(50, 839);
             this.deleteTeacherButton.Margin = new System.Windows.Forms.Padding(6);
             this.deleteTeacherButton.Name = "deleteTeacherButton";
             this.deleteTeacherButton.Size = new System.Drawing.Size(194, 63);
@@ -120,7 +120,7 @@ namespace grupp19_lab2
             this.addTeacherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTeacherButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTeacherButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addTeacherButton.Location = new System.Drawing.Point(266, 868);
+            this.addTeacherButton.Location = new System.Drawing.Point(256, 839);
             this.addTeacherButton.Margin = new System.Windows.Forms.Padding(6);
             this.addTeacherButton.Name = "addTeacherButton";
             this.addTeacherButton.Size = new System.Drawing.Size(416, 63);
@@ -133,7 +133,7 @@ namespace grupp19_lab2
             // 
             this.personnrLabel.AutoSize = true;
             this.personnrLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.personnrLabel.Location = new System.Drawing.Point(852, 248);
+            this.personnrLabel.Location = new System.Drawing.Point(847, 219);
             this.personnrLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.personnrLabel.Name = "personnrLabel";
             this.personnrLabel.Size = new System.Drawing.Size(168, 31);
@@ -144,7 +144,7 @@ namespace grupp19_lab2
             // 
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.firstNameLabel.Location = new System.Drawing.Point(852, 370);
+            this.firstNameLabel.Location = new System.Drawing.Point(847, 341);
             this.firstNameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(104, 31);
@@ -155,7 +155,7 @@ namespace grupp19_lab2
             // 
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lastNameLabel.Location = new System.Drawing.Point(852, 477);
+            this.lastNameLabel.Location = new System.Drawing.Point(847, 448);
             this.lastNameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(119, 31);
@@ -166,7 +166,7 @@ namespace grupp19_lab2
             // 
             this.phoneNumberLabel.AutoSize = true;
             this.phoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.phoneNumberLabel.Location = new System.Drawing.Point(852, 588);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(847, 559);
             this.phoneNumberLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(173, 31);
@@ -178,7 +178,7 @@ namespace grupp19_lab2
             // 
             this.mailLabel.AutoSize = true;
             this.mailLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.mailLabel.Location = new System.Drawing.Point(852, 699);
+            this.mailLabel.Location = new System.Drawing.Point(847, 670);
             this.mailLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.mailLabel.Name = "mailLabel";
             this.mailLabel.Size = new System.Drawing.Size(143, 31);
@@ -192,10 +192,10 @@ namespace grupp19_lab2
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cancelButton.Location = new System.Drawing.Point(857, 868);
+            this.cancelButton.Location = new System.Drawing.Point(1180, 839);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(6);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(237, 63);
+            this.cancelButton.Size = new System.Drawing.Size(197, 63);
             this.cancelButton.TabIndex = 20;
             this.cancelButton.Text = "Avbryt";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -208,10 +208,10 @@ namespace grupp19_lab2
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.saveButton.Location = new System.Drawing.Point(1145, 868);
+            this.saveButton.Location = new System.Drawing.Point(853, 839);
             this.saveButton.Margin = new System.Windows.Forms.Padding(6);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(237, 63);
+            this.saveButton.Size = new System.Drawing.Size(315, 63);
             this.saveButton.TabIndex = 21;
             this.saveButton.Text = "Spara";
             this.saveButton.UseVisualStyleBackColor = false;
@@ -220,56 +220,56 @@ namespace grupp19_lab2
             // personnrTextbox
             // 
             this.personnrTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.personnrTextbox.Location = new System.Drawing.Point(857, 306);
+            this.personnrTextbox.Location = new System.Drawing.Point(852, 277);
             this.personnrTextbox.Margin = new System.Windows.Forms.Padding(6);
             this.personnrTextbox.Multiline = true;
             this.personnrTextbox.Name = "personnrTextbox";
             this.personnrTextbox.ReadOnly = true;
-            this.personnrTextbox.Size = new System.Drawing.Size(486, 41);
+            this.personnrTextbox.Size = new System.Drawing.Size(525, 41);
             this.personnrTextbox.TabIndex = 22;
             // 
             // firstnameTextbox
             // 
             this.firstnameTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.firstnameTextbox.Location = new System.Drawing.Point(857, 407);
+            this.firstnameTextbox.Location = new System.Drawing.Point(852, 378);
             this.firstnameTextbox.Margin = new System.Windows.Forms.Padding(6);
             this.firstnameTextbox.Multiline = true;
             this.firstnameTextbox.Name = "firstnameTextbox";
             this.firstnameTextbox.ReadOnly = true;
-            this.firstnameTextbox.Size = new System.Drawing.Size(486, 41);
+            this.firstnameTextbox.Size = new System.Drawing.Size(525, 41);
             this.firstnameTextbox.TabIndex = 23;
             // 
             // lastnameTextbox
             // 
             this.lastnameTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lastnameTextbox.Location = new System.Drawing.Point(857, 514);
+            this.lastnameTextbox.Location = new System.Drawing.Point(852, 485);
             this.lastnameTextbox.Margin = new System.Windows.Forms.Padding(6);
             this.lastnameTextbox.Multiline = true;
             this.lastnameTextbox.Name = "lastnameTextbox";
             this.lastnameTextbox.ReadOnly = true;
-            this.lastnameTextbox.Size = new System.Drawing.Size(486, 41);
+            this.lastnameTextbox.Size = new System.Drawing.Size(525, 41);
             this.lastnameTextbox.TabIndex = 24;
             // 
             // phoneTextbox
             // 
             this.phoneTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phoneTextbox.Location = new System.Drawing.Point(857, 625);
+            this.phoneTextbox.Location = new System.Drawing.Point(852, 596);
             this.phoneTextbox.Margin = new System.Windows.Forms.Padding(6);
             this.phoneTextbox.Multiline = true;
             this.phoneTextbox.Name = "phoneTextbox";
             this.phoneTextbox.ReadOnly = true;
-            this.phoneTextbox.Size = new System.Drawing.Size(486, 41);
+            this.phoneTextbox.Size = new System.Drawing.Size(525, 41);
             this.phoneTextbox.TabIndex = 25;
             // 
             // mailTextbox
             // 
             this.mailTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mailTextbox.Location = new System.Drawing.Point(857, 736);
+            this.mailTextbox.Location = new System.Drawing.Point(852, 707);
             this.mailTextbox.Margin = new System.Windows.Forms.Padding(6);
             this.mailTextbox.Multiline = true;
             this.mailTextbox.Name = "mailTextbox";
             this.mailTextbox.ReadOnly = true;
-            this.mailTextbox.Size = new System.Drawing.Size(486, 41);
+            this.mailTextbox.Size = new System.Drawing.Size(525, 41);
             this.mailTextbox.TabIndex = 26;
             // 
             // Lärare
