@@ -15,7 +15,6 @@ namespace grupp19_lab2
         Form1 form1;
         List<Teacher> lärarLista = new List<Teacher>();
         List<Teacher> searchLärare = new List<Teacher>();
-        // TODO lägga till så man kan se vilka lärarlag den valda läraren tillhör?
         public Lärare(Form1 form1)
         {
             this.form1 = form1;
@@ -25,6 +24,8 @@ namespace grupp19_lab2
         }
         private void UpdateTeacherListBox()
         {
+            lärarLista.Clear();
+            lärarLista.AddRange(form1.Databasanslutning().HämtaLärare());
             teacherListBox.Items.Clear();
             foreach (Teacher item in lärarLista)
             {
@@ -48,8 +49,8 @@ namespace grupp19_lab2
                 personnrTextbox.Text = lärarLista[teacherListBox.SelectedIndex].personnummer;
                 firstnameTextbox.Text = lärarLista[teacherListBox.SelectedIndex].Förnamn;
                 lastnameTextbox.Text = lärarLista[teacherListBox.SelectedIndex].efternamn;
-                // phoneTextbox.Text = lärarLista[teacherListBox.SelectedIndex].Telefon; // Saknas attribut
-                // mailTextbox.Text = lärarLista[teacherListBox.SelectedIndex].Mail; // Saknas attribut
+                phoneTextbox.Text = lärarLista[teacherListBox.SelectedIndex].telefonnummer;
+                mailTextbox.Text = lärarLista[teacherListBox.SelectedIndex].email;
             }
         }
 
@@ -100,8 +101,8 @@ namespace grupp19_lab2
             personnrTextbox.ReadOnly = false;
             firstnameTextbox.ReadOnly = false;
             lastnameTextbox.ReadOnly = false;
-            // mailTextbox.ReadOnly = false; // Saknas attribut
-            // phoneTextbox.ReadOnly = false; // Saknas attribut
+            mailTextbox.ReadOnly = false;
+            phoneTextbox.ReadOnly = false;
             cancelButton.Enabled = true;
             saveButton.Enabled = true;
             teacherListBox.Enabled = false;
@@ -116,7 +117,7 @@ namespace grupp19_lab2
         }
         private void checkInput()
         {
-            if(!string.IsNullOrEmpty(personnrTextbox.Text) && !string.IsNullOrEmpty(firstnameTextbox.Text) && !string.IsNullOrEmpty(lastnameTextbox.Text)) // Saknas attribut
+            if(!string.IsNullOrEmpty(personnrTextbox.Text) && !string.IsNullOrEmpty(firstnameTextbox.Text) && !string.IsNullOrEmpty(lastnameTextbox.Text) && !string.IsNullOrEmpty(phoneTextbox.Text) && !string.IsNullOrEmpty(mailTextbox.Text))
             {
                 addNewTeacher();
             }
@@ -128,8 +129,8 @@ namespace grupp19_lab2
 
         private void addNewTeacher()
         {
-            Teacher addedTeacher = new Teacher(firstnameTextbox.Text, lastnameTextbox.Text, personnrTextbox.Text); // Saknas attribut
-            lärarLista.Add(addedTeacher);
+            Teacher addedTeacher = new Teacher(firstnameTextbox.Text, lastnameTextbox.Text, personnrTextbox.Text, phoneTextbox.Text, mailTextbox.Text); // Saknas attribut
+            form1.Databasanslutning().SparaNyLärare(addedTeacher);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -148,12 +149,13 @@ namespace grupp19_lab2
             personnrTextbox.ReadOnly = true;
             firstnameTextbox.ReadOnly = true;
             lastnameTextbox.ReadOnly = true;
-            // mailTextbox.ReadOnly = true; // Saknas attribut
-            // phoneTextbox.ReadOnly = true; // Saknas attribut
+            mailTextbox.ReadOnly = true;
+            phoneTextbox.ReadOnly = true;
             cancelButton.Enabled = false;
             saveButton.Enabled = false;
         }
 
+        // Den här metoden får jag inte att fungera. Henrik
         private void deleteTeacherButton_Click(object sender, EventArgs e)
         {
             if (teacherListBox.SelectedItems.Count != 0)
@@ -163,8 +165,9 @@ namespace grupp19_lab2
                 {
                    while (teacherListBox.SelectedIndex != -1)
                    {
-                            lärarLista.RemoveAt(teacherListBox.SelectedIndex);
-                            UpdateTeacherListBox();
+                       form1.Databasanslutning().TaBortLärare(lärarLista[teacherListBox.SelectedIndex]);
+                        lärarLista.RemoveAt(teacherListBox.SelectedIndex);
+                        UpdateTeacherListBox();
                    }
                 }
             }
