@@ -10,170 +10,154 @@ using System.Windows.Forms;
 
 namespace grupp19_lab2
 {
-    
-    
-   
     public partial class Betyg : Form
     {
         Form1 form1;
-        List<Student> studentLista = new List<Student>();
-        private SqliteDatabaseConnection databas;
+        List<Student> studenter;
+        Kurs aktuellKurs;
+        IBetygsunderlag aktuelltBetygsUnderlag;
+
         public Betyg(Form1 form1)
         {
-
+            studenter = new List<Student>();
             this.form1 = form1;
             InitializeComponent();
-            List<string> betyg = new List<string>(2);
-            betyg.Add("-");
-            betyg.Add("G");
-            betyg.Add("VG");
+            BetygComboBox.SelectedIndex = 0;
+            BetygComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            databas = new SqliteDatabaseConnection();
-            ListBox1.Items.AddRange(databas.HämtaStudenter());
-           /*ListBox2.Items.AddRange(databas.HämtaKurser());
-            ListBox3.Items.AddRange(databas.HämtaKursmoment());
-            */
-            comboBox2.Items.AddRange(databas.HämtaKursmoment());
-           
+            StudentTextBox.ReadOnly = true;
+            StudentTextBox.BackColor = Color.White;
 
-                foreach (string a in betyg)
-            {
-                comboBox1.Items.Add(a);
+            KursTextBox.ReadOnly = true;
+            KursTextBox.BackColor = Color.White;
 
-            }
+            KursmomentTextBox.ReadOnly = true;
+            KursmomentTextBox.BackColor = Color.White;
 
         }
 
         private void Betyg_Load(object sender, EventArgs e)
         {
 
+        }
 
+        public void Updatera()
+        {
+            StudentListBox.Items.Clear();
+            BetygListBox.Items.Clear();
+            studenter.AddRange(form1.Databasanslutning().HämtaStudenter());
+            StudentListBox.Items.AddRange(form1.Databasanslutning().HämtaStudenter());
+
+            //TODO: Reset på all skit. 
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void StudentListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-        }
-
-        private void Elev_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            List<Studieresultat> sr = new List<Studieresultat>();
-            sr.Add(new Studieresultat("Anders Andersson", "Webbdesign", "Testtenta", "G"));
-            /*
-             * sr.Add(new Studieresultat(studentnamn=textBox1.Text, kurs=comboBox2.SelectedItem.Text, kursmoment= comboBox1.SelectedItem.Text, betyg=comboBox2.SelectedItem.Text
-             * 
-             */
-            textBox1.Text = ListBox1.SelectedItem.ToString();
-            //Skapar en array för att lagra kurser
-            Kurs[] kurslista = new Kurs[0];
-            Kursmoment[] kursmomentlista = new Kursmoment[0];
-            kursmomentlista = databas.HämtaKursmoment().ToArray();
-            //Lägger in kurser i arrayen
-            kurslista = databas.HämtaKurser().ToArray();
-
-            for (int i = 0; i < sr.Count; i++)
+            if (StudentListBox.SelectedIndex < 0)
             {
-
-                if (ListBox1.SelectedItem.ToString() == (sr[i].Studentnamn))
-                {
-                    for (int j = 0; j < kurslista.Length; j++)
-                    {
-                        if (kurslista[j].ToString().Contains(sr[i].Kurs))
-                        {
-                            ListBox2.Items.Add(sr[i].Kurs);
-                            j++;
-
-                            for (int y = 0; y < kursmomentlista.Length; y++)
-                            {
-                                if (kursmomentlista[y].ToString().Contains(sr[i].Kursmoment))
-                                {
-                                    ListBox3.Items.Add(sr[i].Kursmoment);
-                                    y++;
-
-                                }
-
-                            }
-
-
-                        }
-
-                    }
-                }
-
-
+                return;
             }
 
+            StudentTextBox.Text = studenter[StudentListBox.SelectedIndex].HämtaNamn();
+            KursTextBox.Text = "";
+            KursmomentTextBox.Text = "";
+            SparaButton.Enabled = false;
+            BetygComboBox.Enabled = false;
+            BetygComboBox.SelectedIndex = 0;
 
-
-
-
+            KurserListBox.Items.Clear();
+            BetygListBox.Items.Clear();
+            KursBetygListBox.Items.Clear();
+            foreach (var item in studenter[StudentListBox.SelectedIndex].läsbarKurslista)
+            {
+                if (item.Key.GetType() == typeof(Kurs))
+                {
+                    KurserListBox.Items.Add(item.Key);
+                }
+            }
 
         }
 
-        private void ListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void KurserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (KurserListBox.SelectedIndex < 0)
+            {
+                return;
+            }
 
+            KursTextBox.Text = KurserListBox.SelectedItem.ToString();
+            SparaButton.Enabled = false;
+            BetygComboBox.Enabled = false;
+            BetygComboBox.SelectedIndex = 0;
+
+            aktuellKurs = (Kurs)KurserListBox.Items[KurserListBox.SelectedIndex];
+
+            KursBetygListBox.Items.Clear();
+            BetygListBox.Items.Clear();
+            KursBetygListBox.Items.Add(aktuellKurs);
+            BetygListBox.Items.Add(studenter[StudentListBox.SelectedIndex].läsbarKurslista[aktuellKurs]);
+
+            foreach (var item in aktuellKurs.HämtaKursmoment())
+            {
+                KursBetygListBox.Items.Add(item);
+                BetygListBox.Items.Add(studenter[StudentListBox.SelectedIndex].läsbarKurslista[item]);
+            }
 
         }
 
-        private void ListBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void SparaButton_Click(object sender, EventArgs e)
         {
+            studenter[StudentListBox.SelectedIndex].UppdateraBetyg(aktuelltBetygsUnderlag, BetygComboBox.SelectedItem.ToString());
 
+            KursBetygListBox.Items.Clear();
+            BetygListBox.Items.Clear();
+            KursBetygListBox.Items.Add(aktuellKurs);
+            BetygListBox.Items.Add(studenter[StudentListBox.SelectedIndex].läsbarKurslista[aktuellKurs]);
 
+            foreach (var item in aktuellKurs.HämtaKursmoment())
+            {
+                KursBetygListBox.Items.Add(item);
+                BetygListBox.Items.Add(studenter[StudentListBox.SelectedIndex].läsbarKurslista[item]);
+            }
+            MessageBox.Show("Betyget är sparat!", "Hantera betyg");
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void KursBetygListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (KursBetygListBox.SelectedIndex < 0)
+            {
+                return;
+            }
+            BetygListBox.SelectedIndex = KursBetygListBox.SelectedIndex;
+            BetygComboBox.Enabled = true;
+            BetygComboBox.SelectedIndex = 0;
+            KursmomentTextBox.Text = KursBetygListBox.Items[KursBetygListBox.SelectedIndex].ToString();
+            aktuelltBetygsUnderlag = (IBetygsunderlag)KursBetygListBox.Items[KursBetygListBox.SelectedIndex];
 
         }
 
-        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void BetygComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (BetygComboBox.SelectedIndex > 0)
+            {
+                SparaButton.Enabled = true;
+            }
+            else
+            {
+                SparaButton.Enabled = false;
+            }
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void BetygListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (KursBetygListBox.SelectedIndex < 0)
+            {
+                return;
+            }
+            KursBetygListBox.SelectedIndex = BetygListBox.SelectedIndex;
 
         }
-    }
-    public class Studieresultat
-    {
-        private string studentnamn;
-        private string kurs;
-        private string kursmoment;
-        private string betygresultat;
-        public Studieresultat(string studentnamn, string kurs, string kursmoment, string betygresultat)
-        {
-            this.studentnamn = studentnamn;
-            this.kurs = kurs;
-            this.kursmoment = kursmoment;
-            this.betygresultat = betygresultat;
-        }
-        public string Studentnamn
-        {
-            get { return studentnamn; }
-            set { studentnamn = value; }
-        }
-        public string Kurs
-        {
-            get { return kurs; }
-            set { kurs = value; }
-        }
-        public string Kursmoment
-        {
-            get { return kursmoment; }
-            set { kursmoment = value; }
-        }
-        public string BetygsResultat
-        {
-            get { return betygresultat; }
-            set { betygresultat = value; }
-        }
-
     }
 }

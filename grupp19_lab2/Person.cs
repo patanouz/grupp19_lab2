@@ -11,6 +11,8 @@ namespace grupp19_lab2
         public string Förnamn { get; set; }
         public string efternamn { get; set; }
         public string personnummer { get; private set; }
+        public string telefonnummer { get; set; }
+        public string email { get; set; }
 
 
         public Person(string förnamn, string efternamn, string personnummer)

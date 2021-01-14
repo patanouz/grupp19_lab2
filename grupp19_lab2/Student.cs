@@ -24,11 +24,21 @@ namespace grupp19_lab2
         //Konstruktor som huvudsakligen behövs för att skapa studenter ifrån databasen.
         public Student(string Personnummer, string Förnamn, string Efternamn, string Email, string Telefonnummer, string Kurser, string Betyg) : base(Förnamn, Efternamn, Personnummer)
         {
-            //TODO: Hantera all denna skit. 
+            //TODO: Hantera all denna skit.
+            kurslista = new Dictionary<IBetygsunderlag, string>();
+            base.email = Email;
+            base.telefonnummer = Telefonnummer;
         }
 
         public void LäggTillBetysunderlag(IBetygsunderlag underlag)
         {
+
+            MessageBox.Show(this.HämtaNamn() + " lägger till: " + underlag.HämtaNamn());
+
+            if(kurslista.ContainsKey(underlag))
+            {
+                return;
+            }
             kurslista.Add(underlag, "-");
 
         }
@@ -59,6 +69,14 @@ namespace grupp19_lab2
         public void UppdateraBetyg(IBetygsunderlag underlag, string nyttBetyg)
         {
             kurslista[underlag] = nyttBetyg; 
+        }
+
+        public void TabortKurs(IBetygsunderlag underlag)
+        {
+            if(kurslista.ContainsKey(underlag))
+            {
+                kurslista.Remove(underlag);
+            }
         }
 
 
