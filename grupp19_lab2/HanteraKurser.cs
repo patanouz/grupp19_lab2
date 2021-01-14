@@ -42,6 +42,7 @@ namespace grupp19_lab2
             foreach (Kurs s in kursLista)
             {
                 kurserListBox.Items.Add(s.HämtaNamn());
+                
             }
         }
 
@@ -62,7 +63,9 @@ namespace grupp19_lab2
             foreach (Student s in studentLista)
             {
                 studentListBox.Items.Add(s.HämtaNamn());
+                
             }
+            
         }
 
         private void UppdateraStudentComboBox()
@@ -92,6 +95,7 @@ namespace grupp19_lab2
         {
             studentListBox.SelectedIndex = -1;
             kursmomentListBox.SelectedIndex = -1;
+            
 
             if (kurserListBox.SelectedIndex != -1)
             {
@@ -113,8 +117,9 @@ namespace grupp19_lab2
                 KollaLärarlag();
                 UppdateraStudentComboBox();
                 
-            }                   
+            }
             
+
         }
 
         private void kursmomentListBox_SelectedIndexChanged(object sender, EventArgs e)

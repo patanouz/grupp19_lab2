@@ -114,6 +114,7 @@ namespace grupp19_lab2
                 studentLista.AddRange(form1.Databasanslutning().HämtaStudenter());
                 UppdateraStudentListBox();
                 MessageBox.Show("Studenten är sparad!","Hantera student");
+                return;
             }
             // Normalt sett hade vi inte behövt loopa genom det, men eftersom det går att söka behövs den.
             foreach (Student item in studentLista)

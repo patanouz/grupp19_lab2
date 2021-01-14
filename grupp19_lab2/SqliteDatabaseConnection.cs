@@ -230,13 +230,7 @@ namespace grupp19_lab2
         }
 
         private string LoadConnectionString(string id = "Default")
-        {
-
-            //TODO: försök att importa den här skiten, den står och laddar och verkar ta timmar. 
-            //Tar det över natten för det är tydligen flertal terrabyte den behöver ladda ner för att lägga till en jävla using
-            //return ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-            //jag kör denna sålänge
+        { 
             return "Data Source=.\\Databas.db;version=3;";
         }
     }

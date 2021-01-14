@@ -67,15 +67,6 @@ namespace grupp19_lab2
                 return;
             }
 
-            if(studenter.Count > 4)
-            {
-                foreach (var item in studenter[4].läsbarKurslista)
-                {
-
-                    MessageBox.Show("Test: " + item.Key + " " + item.Value);
-                }
-            }
-
             StudentTextBox.Text = studenter[StudentListBox.SelectedIndex].HämtaNamn();
             KursTextBox.Text = "";
             KursmomentTextBox.Text = "";
