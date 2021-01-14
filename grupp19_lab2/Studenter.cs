@@ -141,7 +141,8 @@ namespace grupp19_lab2
                 {
                     return;
                 }
-                if (studentLista.Count <= 0) { return; }
+
+            if (studentLista.Count <= 0) { return; }
 
                 if (söktaStudenter.Count < studentListBox.Items.Count)
                 {
